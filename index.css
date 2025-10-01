@@ -218,9 +218,9 @@
         text-align: center;
         padding: 1px;
       }
-      #contactForm1 {
-        margin-top: 20px;
-      }
+#contactForm1 {
+  margin-top: 20px;
+}
   
       #tictac {
           
@@ -1177,7 +1177,7 @@
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
 }
 
 .info-card {
@@ -1210,6 +1210,7 @@
   margin: 0 auto 20px;
   font-size: 24px;
   color: white;
+  box-shadow: 0 0 20px rgba(245, 122, 77, 0.3);
 }
 
 .info-card h3 {
@@ -1222,9 +1223,10 @@
 
 .info-card p {
   color: aliceblue;
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin: 0;
   font-family: 'Exo 2', sans-serif;
+  line-height: 1.4;
 }
 
 /* Enhanced Form Styling */
@@ -1238,7 +1240,7 @@
 }
 
 .form-group {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   position: relative;
 }
 
@@ -1250,7 +1252,7 @@
 .inputBox input,
 .inputBox textarea {
   width: 100%;
-  padding: 15px 20px;
+  padding: 10px 10px;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
