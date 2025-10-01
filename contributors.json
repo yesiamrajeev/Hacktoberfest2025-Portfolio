@@ -11,12 +11,12 @@
     "role": "Contributor",
     "avatar": "https://avatars.githubusercontent.com/u/132124215?v=4"
   },
-{
-  "name": "Yajy Goswami",
-  "github": "https://github.com/Yajy",
-  "role": "Contributor",
-  "avatar": "https://avatars.githubusercontent.com/u/101127424?s=400&u=223d18fdddbced0735ef383c130c2e5362aedc92&v=4"
-},
+  {
+    "name": "Yajy Goswami",
+    "github": "https://github.com/Yajy",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/101127424?s=400&u=223d18fdddbced0735ef383c130c2e5362aedc92&v=4"
+  },
   {
     "name": "Git Ironman",
     "github": "https://github.com/iamironman-png",
@@ -34,25 +34,29 @@
     "github": "https://github.com/KrishnaSaxena108",
     "role": "Contributor",
     "avatar": "https://github.com/KrishnaSaxena108.png"
+  },
+  {
+    "name": "Sakshi Soni",
+    "github": "sakshi-sonii",
+    "role": "Contributor",
+    "avatar": "https://in.pinterest.com/pin/140806234311366/"
+  },
+  {
+    "name": "Pankaj Patwal",
+    "github": "ChiefPatwal",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/120747214?v=4"
+  },
+  {
+    "name": "Peter Samuel",
+    "github": "https://github.com/PeterSamuel",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/65086865?v=4"
+  },
+  {
+    "name": "Jash Shah",
+    "github": "https://github.com/shahjash1634",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/145895135?v=4"
   }
-
-  ,
-{
-  "name": "Sakshi Soni",
-  "github": "sakshi-sonii",
-  "role": "Contributor",
-  "avatar": "https://in.pinterest.com/pin/140806234311366/"
-},
-{
-  "name": "Pankaj Patwal",
-  "github": "ChiefPatwal",
-  "role": "Contributor",
-  "avatar": "https://avatars.githubusercontent.com/u/120747214?v=4"
-},
-{
-  "name": "Peter Samuel",
-  "github": "https://github.com/PeterSamuel",
-  "role": "Contributor",
-  "avatar": "https://avatars.githubusercontent.com/u/65086865?v=4"
-}
 ]
