@@ -39,7 +39,7 @@ img {
     height: auto;
 }
 
-/* --- TYPOGRAPHY (Making Words Look Cool) --- */
+/* --- TYPOGRAPHY --- */
 h2, h3, h4 {
     font-family: var(--font-heading);
     letter-spacing: 2px;
@@ -49,7 +49,7 @@ h2, h3, h4 {
 
 .semicolon {
     color: var(--primary-red);
-    font-family: var(--font-body); /* Or keep it the same, your choice */
+    font-family: var(--font-body);
 }
 
 .section-heading {
@@ -61,9 +61,9 @@ h2, h3, h4 {
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
+    white-space: nowrap; 
 }
 
-/* Scribble underline effect */
 .section-heading::after {
     content: '';
     position: absolute;
@@ -84,6 +84,11 @@ h2, h3, h4 {
     background: rgba(18, 18, 18, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #333;
+    /* MODIFIED: To position the toggle button */
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 1rem;
 }
 
 .main-nav {
@@ -92,6 +97,20 @@ h2, h3, h4 {
     align-items: center;
     gap: 2rem;
     padding: 1rem 2rem;
+    flex-wrap: wrap;
+    width: 100%; 
+}
+
+/* --- NEW: MENU TOGGLE BUTTON STYLES --- */
+.menu-toggle {
+    display: none; /* Hide by default on large screens */
+    background: none;
+    border: none;
+    color: var(--primary-red);
+    font-size: 1.8rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 101;
 }
 
 .main-nav a {
@@ -120,12 +139,33 @@ h2, h3, h4 {
     justify-content: space-between;
     gap: 4rem;
     width: 100%;
+    flex-wrap: wrap;
 }
 
-.hero-content .text-content { flex: 1; }
-.hero-content .image-content { text-align: center; }
-.hero-content .text-content h2 img { max-width: 100%; height: auto; }
-.hero-content .text-content p { font-size: 1.1rem; color: var(--grey-text); margin: 2rem 0; max-width: 500px; }
+.hero-content .text-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-content .image-content {
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-content .text-content h2 img {
+    width: 100%; 
+    height: auto;
+}
+
+.hero-content .text-content p {
+    font-size: 1.1rem;
+    color: var(--grey-text);
+    margin: 2rem 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .image-container {
     border: 3px dashed var(--primary-red);
@@ -138,10 +178,18 @@ h2, h3, h4 {
     transform: rotate(2deg) scale(1.05);
 }
 
-.image-content h3 { font-size: 2rem; margin-top: 1.5rem; }
-.image-content p { color: var(--primary-red); font-family: var(--font-heading); letter-spacing: 1px; }
+.image-content h3 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
 
-/* --- BUTTONS (Click This!) --- */
+.image-content p {
+    color: var(--primary-red);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+/* --- BUTTONS --- */
 .cta-button {
     display: inline-block;
     background-color: var(--primary-red);
@@ -154,6 +202,7 @@ h2, h3, h4 {
     border: 2px solid var(--primary-red);
     transition: all 0.3s ease;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .cta-button:hover {
@@ -162,10 +211,10 @@ h2, h3, h4 {
     transform: translateY(-5px);
 }
 
-/* --- PROJECTS SECTION --- */
+/* --- PROJECTS --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 2rem;
 }
 
@@ -177,6 +226,8 @@ h2, h3, h4 {
     overflow: hidden;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -188,6 +239,8 @@ h2, h3, h4 {
     display: block;
     width: 100%;
     transition: opacity 0.3s ease;
+    flex-grow: 1;
+    object-fit: cover;
 }
 
 .project-card:hover img {
@@ -206,13 +259,15 @@ h2, h3, h4 {
     background: rgba(0,0,0,0.7);
     transform: translateY(100%);
     transition: transform 0.3s ease;
+    color: var(--primary-red);
 }
 
 .project-card:hover .project-title {
     transform: translateY(0);
+    color: var(--light-text);
 }
 
-/* --- ACHIEVEMENTS SECTION --- */
+/* --- ACHIEVEMENTS --- */
 .achievements-list .achievement-card {
     display: flex;
     gap: 2rem;
@@ -221,6 +276,7 @@ h2, h3, h4 {
     padding: 2rem;
     border-left: 5px solid var(--primary-red);
     margin-bottom: 3rem;
+    border-radius: 8px;
 }
 
 .achievements-list .achievement-card:nth-child(even) {
@@ -233,14 +289,24 @@ h2, h3, h4 {
     flex-basis: 40%;
     max-width: 40%;
     object-fit: cover;
+    border-radius: 8px;
 }
 
-.achievement-card .text { flex-basis: 60%; }
-.achievement-card h3 { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 1rem; }
-.achievement-card p { color: var(--grey-text); }
+.achievement-card .text {
+    flex-basis: 60%;
+}
 
+.achievement-card h3 {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
 
-/* --- SKILLS SECTION --- */
+.achievement-card p {
+    color: var(--grey-text);
+}
+
+/* --- SKILLS --- */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -255,6 +321,7 @@ h2, h3, h4 {
     text-align: center;
     border: 1px solid #333;
     transition: all 0.2s ease-in-out;
+    border-radius: 8px;
 }
 
 .skill-card:hover {
@@ -262,11 +329,22 @@ h2, h3, h4 {
     border-color: var(--primary-red);
 }
 
-.skill-card img { height: 50px; margin-bottom: 1rem; object-fit: contain; }
-.skill-card span { font-family: var(--font-body); font-weight: 700; }
+.skill-card img {
+    height: 50px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
 
-/* --- TIC TAC TOE GAME --- */
-.tictac-content { text-align: center; }
+.skill-card span {
+    font-family: var(--font-body);
+    font-weight: 700;
+}
+
+/* --- TIC TAC TOE --- */
+.tictac-content {
+    text-align: center;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -288,9 +366,17 @@ h2, h3, h4 {
     font-family: var(--font-heading);
     cursor: pointer;
     transition: background 0.2s;
+    border-radius: 8px;
 }
-.board div:hover { background: #2a2a2a; }
-#turn-info { margin-top: 1rem; font-size: 1.2rem; }
+
+.board div:hover {
+    background: #2a2a2a;
+}
+
+#turn-info {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
 
 /* --- FOOTER & CONTACT --- */
 footer {
@@ -299,7 +385,13 @@ footer {
     text-align: center;
 }
 
-.contact-subtitle { color: var(--grey-text); margin-bottom: 3rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.contact-subtitle {
+    color: var(--grey-text);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #contactForm {
     max-width: 700px;
@@ -309,7 +401,12 @@ footer {
     gap: 1rem;
 }
 
-#contactForm .input-group { display: flex; gap: 1rem; }
+#contactForm .input-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 #contactForm input, #contactForm textarea {
     width: 100%;
     padding: 1rem;
@@ -318,6 +415,7 @@ footer {
     color: var(--light-text);
     font-family: var(--font-body);
     font-size: 1rem;
+    border-radius: 6px;
 }
 
 #contactForm input:focus, #contactForm textarea:focus {
@@ -331,14 +429,36 @@ footer {
     background: #1e4620;
     border: 1px solid #3c8d40;
     color: #a7f3d0;
+    border-radius: 6px;
 }
 
-.social-section h3 { font-size: 2rem; margin-bottom: 1rem; }
-.social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; }
-.social-link { font-size: 2rem; color: var(--grey-text); transition: color 0.3s, transform 0.3s; }
-.social-link:hover { color: var(--primary-red); transform: scale(1.2); }
+/* Social Links */
+.social-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 
-.copyright { color: #555; }
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.social-link {
+    font-size: 2rem;
+    color: var(--grey-text);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+    color: var(--primary-red);
+    transform: scale(1.2);
+}
+
+.copyright {
+    color: #555;
+}
 
 /* --- UTILITIES --- */
 .loading-screen {
@@ -352,20 +472,192 @@ footer {
     z-index: 9999;
     transition: opacity 0.5s ease-out;
 }
-.loading-screen.hidden { opacity: 0; pointer-events: none; }
-.loading-screen p { font-family: var(--font-heading); font-size: 3rem; color: var(--primary-red); }
 
-/* --- RESPONSIVE DESIGN (So it doesn't look like garbage on a phone) --- */
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-screen p {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--primary-red);
+}
+
+/* -------------------------------------------------------- */
+/* --- RESPONSIVE DESIGN (INCLUDING MENU TOGGLE) --- */
+/* -------------------------------------------------------- */
+
+/* Container Padding for very small devices */
+@media (max-width: 480px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 2rem; 
+        padding-bottom: 2rem;
+    }
+    
+    .section-heading {
+        font-size: 2.2rem; 
+        white-space: normal; 
+    }
+
+    .image-container img {
+        max-height: 250px;
+        object-fit: contain;
+    }
+}
+
+/* Mobile Layouts for Screen Widths up to 768px */
 @media (max-width: 768px) {
-    .section-heading { font-size: 2.5rem; }
-    .hero-content { flex-direction: column; text-align: center; }
-    .hero-content .text-content p { margin-left: auto; margin-right: auto; }
+    
+    .section-heading {
+        font-size: 2.5rem;
+    }
+    .hero-section {
+        min-height: auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .hero-content {
+        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-content .image-content {
+        margin-top: 2rem;
+    }
+
+    /* MENU TOGGLE BEHAVIOR */
+    .main-header {
+        /* Align items so that the nav content (container) is centered 
+           when the menu is open, or just use space-between for toggle and container */
+        justify-content: space-between; 
+        padding: 0.5rem 1rem;
+        flex-wrap: nowrap; /* Prevent nav from wrapping on small screen when closed */
+        position: relative; /* Context for absolute positioning of nav/toggle */
+    }
+
+    .menu-toggle {
+        display: block; /* Show the hamburger button */
+        order: 1;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+    }
+
+    .main-nav {
+        /* Mobile Menu Default State (Hidden) */
+        display: none; 
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        position: absolute;
+        top: 100%; /* Position below the header bar */
+        left: 0;
+        width: 100%;
+        background: var(--dark-bg);
+        border-top: 1px solid var(--primary-red);
+        padding: 0; /* Links handle padding */
+        min-height: 50vh;
+    }
+
+    /* Mobile Menu Active State (Shown) */
+    .main-nav.active {
+        display: flex;
+        z-index: 90; 
+    }
+
+    .main-nav a {
+        flex: 1 1 100%; /* Links take full width */
+        font-size: 1.8rem; 
+        padding: 1rem 0;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+    /* END MENU TOGGLE BEHAVIOR */
+
+
     .achievements-list .achievement-card,
     .achievements-list .achievement-card:nth-child(even) {
         flex-direction: column;
         border: none;
         border-top: 5px solid var(--primary-red);
+        padding: 1rem 1rem 2rem 1rem;
+        margin-bottom: 2rem;
+        align-items: flex-start;
     }
-    .achievement-card img { max-width: 100%; flex-basis: auto; }
-    #contactForm .input-group { flex-direction: column; }
+    .achievement-card img {
+        max-width: 100%;
+        flex-basis: auto;
+        border-radius: 8px;
+    }
+    .achievement-card .text {
+        flex-basis: auto;
+        width: 100%;
+    }
+    .achievement-card h3 {
+        font-size: 2rem; 
+    }
+    #contactForm .input-group {
+        flex-direction: column;
+    }
+}
+
+/* Further optimizations for smaller screens (e.g., phones) */
+@media (max-width: 600px) {
+    .main-nav {
+        /* When menu is open, it takes up the screen */
+        min-height: 100vh;
+    }
+    
+    .cta-button {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Project cards stack single column on very small devices */
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .project-title {
+        font-size: 1.5rem;
+    }
+    
+    .skill-card {
+        flex: 1 1 45%;
+        max-width: 45%;
+        margin: 0 auto;
+        width: auto;
+        padding: 1rem 0.5rem; 
+    }
+    .skill-card img {
+        height: 40px; 
+    }
+    .skill-card span {
+        font-size: 0.9rem; 
+    }
+    .board {
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+        gap: 5px;
+        justify-content: center;
+        margin: 2rem auto;
+    }
+    .board div {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
 }
