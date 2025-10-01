@@ -172,6 +172,22 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
+
+<td align="center">
+  <a href="https://github.com/ahammadabdullah">
+    <img src="https://avatars.githubusercontent.com/u/77303694?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Ahammad Abdullah</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/RKartikeyan">
+    <img src="https://avatars.githubusercontent.com/u/105120016?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>GSSoC 2025-RKARTIKEYAN</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
 </tr>
 </table>
 
