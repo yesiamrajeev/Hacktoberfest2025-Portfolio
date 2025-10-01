@@ -1,0 +1,286 @@
+/* Enhanced Features for Portfolio */
+
+/* Dark Mode Styles */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #8742f5;
+  --card-bg: #f8f9fa;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #8742f5;
+  --card-bg: #2d2d2d;
+  --border-color: #404040;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Apply dark mode styles */
+[data-theme="dark"] body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(135, 66, 245, 0.3);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(135, 66, 245, 0.4);
+}
+
+/* Enhanced Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #8742f5, #6c1fe8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  box-shadow: 0 4px 20px rgba(135, 66, 245, 0.3);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(135, 66, 245, 0.5);
+}
+
+/* Game Statistics Styling */
+.game-stats {
+  background: linear-gradient(135deg, rgba(135, 66, 245, 0.1), rgba(108, 31, 232, 0.1));
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  border: 1px solid rgba(135, 66, 245, 0.2);
+}
+
+.game-stats h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 15px 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] .stat-item {
+  background: rgba(45, 45, 45, 0.9);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 0.9em;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Loading Animation Enhancement */
+.enhanced-loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #8742f5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced Card Hover Effects */
+.enhanced-card {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.enhanced-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+/* Animated Background Particles */
+.bg-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10%, 90% { opacity: 1; }
+  50% { transform: translateY(-100px) rotate(180deg); }
+}
+
+/* Enhanced Typography */
+.gradient-text {
+  background: linear-gradient(135deg, #8742f5, #f57a4d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+/* Accessibility Improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus indicators for better accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .game-stats {
+    padding: 15px;
+    margin: 15px 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .theme-toggle,
+  .scroll-top-btn,
+  .bg-particles {
+    display: none !important;
+  }
+}
