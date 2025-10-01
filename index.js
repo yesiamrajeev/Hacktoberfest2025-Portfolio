@@ -385,3 +385,95 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Progressive enhancement: make non-hero images lazy by default to improve performance
+document.addEventListener('DOMContentLoaded', function() {
+  var hero = document.getElementById('home');
+  var images = document.querySelectorAll('img');
+  images.forEach(function(img) {
+    var insideHero = hero && hero.contains(img);
+    if (!insideHero) {
+      if (!img.hasAttribute('loading')) {
+        img.setAttribute('loading', 'lazy');
+      }
+      if (!img.hasAttribute('decoding')) {
+        img.setAttribute('decoding', 'async');
+      }
+    }
+    // Attach error fallback to show inline 404 placeholder for missing images
+    if (!img._hasErrorHandler) {
+      img.addEventListener('error', function onErr() {
+        var w = img.clientWidth || img.width || 300;
+        var h = img.clientHeight || img.height || 180;
+        // Build SVG then base64-encode to avoid encoding issues
+        var svgStr = (
+          '<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'" viewBox="0 0 300 180">'
+          + '<defs><style>text{font-family:Arial,Helvetica,sans-serif}</style></defs>'
+          + '<rect width="100%" height="100%" fill="#eeeeee"/>'
+          + '<rect x="8" y="8" width="284" height="164" rx="8" ry="8" fill="none" stroke="#cc0000" stroke-width="4"/>'
+          + '<text x="150" y="85" fill="#222222" font-size="44" text-anchor="middle" dominant-baseline="middle">404</text>'
+          + '<text x="150" y="120" fill="#666666" font-size="16" text-anchor="middle" dominant-baseline="middle">Image not found</text>'
+          + '</svg>'
+        );
+        var svgBase64 = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgStr)));
+        // Clear srcset/sizes to prevent the browser from retrying with other candidates
+        if (img.getAttribute('srcset')) img.setAttribute('srcset', '');
+        if (img.getAttribute('sizes')) img.setAttribute('sizes', '');
+        // Apply placeholder
+        img.src = svgBase64;
+        img.alt = img.alt || '404 - Image not found';
+        img.setAttribute('data-fallback', 'true');
+        img.style.backgroundColor = '#eeeeee';
+        img.style.objectFit = 'contain';
+        img.removeEventListener('error', onErr);
+      }, { once: true });
+      img._hasErrorHandler = true;
+    }
+  });
+});
+
+// Theme toggling: persist in localStorage and respect prefers-color-scheme
+document.addEventListener('DOMContentLoaded', function() {
+  var root = document.documentElement;
+  var toggle = document.getElementById('themeToggle');
+
+  function getSystemPreference() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    if (toggle) {
+      toggle.textContent = theme === 'light' ? '🌞' : '🌙';
+      toggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+      toggle.title = theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode';
+    }
+  }
+
+  var saved = localStorage.getItem('theme');
+  var initial = saved || getSystemPreference();
+  applyTheme(initial);
+
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      var current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = current === 'light' ? 'dark' : 'light';
+      applyTheme(next);
+      localStorage.setItem('theme', next);
+    });
+  }
+
+  // React to system changes if user hasn't explicitly chosen
+  if (!saved && window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: light)');
+    mq.addEventListener ? mq.addEventListener('change', function(e) {
+      applyTheme(e.matches ? 'light' : 'dark');
+    }) : mq.addListener(function(e) {
+      applyTheme(e.matches ? 'light' : 'dark');
+    });
+  }
+});

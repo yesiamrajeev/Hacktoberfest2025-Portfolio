@@ -75,6 +75,56 @@
         scrollbar-color: #660404 #e73030;
       }
 
+/* Light theme overrides (minimal, preserves visual style) */
+html[data-theme="light"] body {
+  background-color: #f7f7f7;
+  background-image: none;
+  color: #111;
+}
+
+html[data-theme="light"] .container a {
+  -webkit-text-fill-color: initial;
+  color: #111;
+}
+
+html[data-theme="light"] .sheading,
+html[data-theme="light"] .Aheading,
+html[data-theme="light"] .semicolon {
+  color: #222;
+}
+
+html[data-theme="light"] .project-text1,
+html[data-theme="light"] .project-text2,
+html[data-theme="light"] .project-text3,
+html[data-theme="light"] .project-text4,
+html[data-theme="light"] .info-card,
+html[data-theme="light"] .contact-form-wrapper,
+html[data-theme="light"] .social-link {
+  background-color: rgba(255,255,255,0.8);
+  color: #111;
+}
+
+/* Ensure general text is dark in light theme */
+html[data-theme="light"] p,
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] h5,
+html[data-theme="light"] h6,
+html[data-theme="light"] .text-content,
+html[data-theme="light"] .contact-subtitle {
+  color: #111 !important;
+}
+
+/* Cards and labels within contact form readable on light */
+html[data-theme="light"] .inputBox label {
+  color: #222;
+}
+html[data-theme="light"] .submit-btn {
+  color: #fff;
+}
+
       ::-webkit-scrollbar {
         width: 5px; 
       }
@@ -287,9 +337,13 @@
             -ms-flex-pack: center;
                 justify-content: center;
         font-size: 24px;
-        border: 1px solid #fcfcfc;
+  border: 2px solid rgba(255,255,255,0.8);
         cursor: crosshair;
       }
+/* Ensure grid borders visible in light theme */
+html[data-theme="light"] .cell {
+  border-color: rgba(0,0,0,0.6);
+}
       
   
   
@@ -301,7 +355,7 @@
     right: 0; 
   }
 
-      .achivements-container {
+      .achievements-container {
     width: 100%;
     display: absolute;
     -ms-flex-wrap: wrap;
@@ -413,6 +467,7 @@
       height: auto;
       text-align: center;
       margin-top: 20px; /* Ensures image height adjusts proportionally */
+      aspect-ratio: auto;
   }
   
       /*  */
@@ -499,6 +554,9 @@
         transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
         padding: 10px;
         border-radius: 30px 30px 0px 0px;
+        background-color: transparent;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
     
    
@@ -682,11 +740,11 @@
     }
 
 
-    #achivements {
+    #achievements {
       overflow: hidden;
   }
 
-  .achivements-container {
+  .achievements-container {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -862,7 +920,7 @@
           /* padding-bottom: 150px; */
       }
         
-         .achivements-container {
+         .achievements-container {
           width: 100%;
           display: absolute;
           -ms-flex-wrap: wrap;
@@ -1810,4 +1868,26 @@
     height: 45px;
     font-size: 16px;
   }
+}
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Accessibility: Improve keyboard focus visibility */
+:focus-visible {
+  outline: 3px solid #f57a4d;
+  outline-offset: 2px;
+}
+
+/* Ensure links and buttons have clear focus */
+a:focus-visible,
+button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(245, 122, 77, 0.4);
 }

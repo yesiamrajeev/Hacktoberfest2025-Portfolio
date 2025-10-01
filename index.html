@@ -99,23 +99,14 @@
     <header id="header">
       <div class="container">
         <!-- <a href="#header" class="cursor" >Home<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a> -->
-        <a href="#home" class="cursor"
-          >About<b style="color: rgb(245, 122, 77); font-size: 28px">;</b></a
-        >
-        <a href="#proHead" class="cursor"
-          >Projects<b style="color: rgb(245, 122, 77); font-size: 28px">;</b></a
-        >
-        <a href="#achivements" class="cursor"
-          >Achivements<b style="color: rgb(245, 122, 77); font-size: 28px"
-            >;</b
-          ></a
-        >
-        <a href="#tictac" class="cursor"
-          >Game<b style="color: rgb(245, 122, 77); font-size: 28px">;</b></a
-        >
-        <a href="#contact" class="cursor"
-          >Contact<b style="color: rgb(245, 122, 77); font-size: 28px">;</b></a
-        >
+        <a href="#home" class="cursor">About</a>
+        <a href="#proHead" class="cursor">Projects</a>
+        <a href="#achievements" class="cursor">Achievements</a>
+        <a href="#tictac" class="cursor">Game</a>
+        <a href="#contact" class="cursor">Contact</a>
+        <button id="themeToggle" aria-label="Toggle theme" style="margin-left:10px;">
+          🌙
+        </button>
       </div>
 
       <!-- <section class="slider">          
@@ -188,7 +179,9 @@
           <div class="image-container" id="rightSlideImage">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/profile.png?alt=media&token=c0d8808f-3fbb-4010-80e8-2570579a48df"
-              alt="Your Image"
+              alt="Profile"
+              width="600"
+              height="600"
             />
           </div>
           <div class="image-text">
@@ -214,7 +207,7 @@
     </section>
     <section id="proHead">
       <p class="sheading">
-        Projects<b class="semicolon">;</b>
+        Projects
         <span
           style="
             position: absolute;
@@ -237,7 +230,9 @@
             <img
               src="./imgproject/sentinexpro.png"
               class="proimg"
-              alt="Project Image"
+              alt="Sentinex project thumbnail"
+              width="800"
+              height="450"
             />
           </a>
           <div class="project-text1">
@@ -255,7 +250,9 @@
               width="15%"
               height="15%"
               class="proimg"
-              alt="Project Image"
+              alt="Face recognition project thumbnail"
+              width="800"
+              height="450"
             />
           </a>
           <div class="project-text2">
@@ -295,7 +292,9 @@
               width="15%"
               height="15%"
               class="proimg"
-              alt="Project Image"
+              alt="Yatra 360 project thumbnail"
+              width="800"
+              height="450"
             />
           </a>
           <div class="project-text3">
@@ -310,7 +309,9 @@
               width="15%"
               height="15%"
               class="proimg"
-              alt="Project Image"
+              alt="BLE Scanner project thumbnail"
+              width="800"
+              height="450"
             />
           </a>
           <div class="project-text4">
@@ -320,9 +321,9 @@
       </div>
     </section>
 
-    <section id="achivements" class="hero">
+    <section id="achievements" class="hero">
       <p class="Aheading">
-        Achivements<b class="semicolon">;</b>
+        Achievements
         <span
           style="
             position: absolute;
@@ -334,7 +335,7 @@
           "
         ></span>
       </p>
-      <div class="achivements-container">
+      <div class="achievements-container">
         <div class="a1">
           <div class="achievement-card">
             <img
@@ -754,9 +755,7 @@
     <section>
       <div class="tictac-content" id="tictac">
         <h1>
-          Beat me at this<b style="color: rgb(245, 122, 77); font-size: 28px"
-            >;</b
-          >
+          Beat me at this
         </h1>
         <button onclick="startGame()">Start Game</button>
         <div class="board" id="board"></div>
@@ -787,7 +786,7 @@
         <div class="contact-container">
           <div class="contact-header">
             <p class="sheading">
-              Contact Me<b class="semicolon">;</b>
+              Contact Me
               <span
                 style="
                   position: absolute;
