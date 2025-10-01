@@ -4,8 +4,12 @@
 <head>
   <title>Raj</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547" type="image/x-icon">
-    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547" type="image/x-icon">
+  <link rel="icon"
+    href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547"
+    type="image/x-icon">
+  <link rel="shortcut icon"
+    href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547"
+    type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./index.css">
 
@@ -55,21 +59,20 @@
 
 
   .loading-screen {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease-out;
-        }
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+  }
 
-        .loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-  
+  .loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 </style>
 
 <body>
@@ -77,18 +80,18 @@
     <div class="loader"></div>
 </div> -->
 
-<div class="loading-screen" id="loading-screen">
-  <p style="color: rgb(0, 0, 0); font-size: 24px;">Loading...</p>
-</div>
-<script>
-    window.addEventListener('load', function() {
-        var loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.classList.add('hidden');
-        setTimeout(function() {
-            loadingScreen.style.display = 'none';
-        }, 500);
+  <div class="loading-screen" id="loading-screen">
+    <p style="color: rgb(0, 0, 0); font-size: 24px;">Loading...</p>
+  </div>
+  <script>
+    window.addEventListener('load', function () {
+      var loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.classList.add('hidden');
+      setTimeout(function () {
+        loadingScreen.style.display = 'none';
+      }, 500);
     });
-</script>
+  </script>
   <header id="header">
     <div class="container">
       <!-- <a href="#header" class="cursor" >Home<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a> -->
@@ -341,9 +344,10 @@
               The support and guidance of Prof. Anukampa Behera, along with the recognition received at SOA Proxima,
               have further validated Sentinex's potential to revolutionize community security. It has garnered unanimous
               praise for its ability to make a real difference in society.
-            <br>
+              <br>
               This journey has been characterized by unwavering perseverance and well-deserved recognition, which truly
-              exemplify Patrologix's unwavering commitment to innovation and making a positive impact on society.</p>
+              exemplify Patrologix's unwavering commitment to innovation and making a positive impact on society.
+            </p>
           </div>
         </div>
       </div>
@@ -398,7 +402,7 @@
 
   <section id="skills">
     <div class="card animate-on-scroll">
-      <img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Python Logo" class="logo">
+      <img src="https://blog.accredian.com/wp-content/uploads/2019/04/Python-logo.jpg" alt="Python Logo" class="logo">
       <h3>Python</h3>
     </div>
 
@@ -427,14 +431,13 @@
     </div>
 
     <div class="card animate-on-scroll">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FEclipse-Luna-Logo.svg.png?alt=media&token=8eca16e1-56cf-4bc6-8f46-7a052051e6d4"
-        alt="Eclipse Logo" class="logo">
+      <img src="https://images.seeklogo.com/logo-png/48/1/eclipse-logo-png_seeklogo-481384.png" alt="Eclipse Logo"
+        class="logo">
       <h3>Eclipse</h3>
     </div>
 
     <div class="card animate-on-scroll">
-      <img src="https://cloud.google.com/images/social-icon-google-cloud-1200-630.png" alt="GCP Logo" class="logo">
+      <img src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/06/Logo-google-cloud-icon-vector-PNG.png" alt="GCP Logo" class="logo">
       <h3>GCP</h3>
     </div>
 
@@ -463,7 +466,7 @@
     </div>
 
     <div class="card animate-on-scroll">
-      <img src="https://flask.palletsprojects.com/en/2.0.x/_images/flask-logo.png" alt="Flask Logo" class="logo">
+      <img src="https://www.pngfind.com/pngs/m/128-1286693_flask-framework-logo-svg-hd-png-download.png" alt="Flask Logo" class="logo">
       <h3>Flask</h3>
     </div>
 
@@ -553,11 +556,12 @@
         <div class="contact-header">
           <p class="sheading">
             Contact Me<b class="semicolon">;</b>
-            <span style="position: absolute; bottom: -10px; left: 0; width: 15%; height: 6px; background-color: #6c1fe8;"></span>
+            <span
+              style="position: absolute; bottom: -10px; left: 0; width: 15%; height: 6px; background-color: #6c1fe8;"></span>
           </p>
           <p class="contact-subtitle">Ready to start your next project? Let's build something amazing together!</p>
         </div>
-        
+
         <div class="contact-content">
           <div class="contact-info">
             <div class="info-card">
@@ -567,7 +571,7 @@
               <h3>Email Me</h3>
               <p>rajeev.220077@gmail.com</p>
             </div>
-            
+
             <div class="info-card">
               <div class="info-icon">
                 <i class="fa fa-code"></i>
@@ -575,7 +579,7 @@
               <h3>Specialization</h3>
               <p>Android & Web Development</p>
             </div>
-            
+
             <div class="info-card">
               <div class="info-icon">
                 <i class="fa fa-clock-o"></i>
@@ -584,7 +588,7 @@
               <p>Within 24 hours</p>
             </div>
           </div>
-          
+
           <div class="contact-form-wrapper">
             <div id="contactForm1">
               <form action="" id="contactForm">
@@ -604,7 +608,7 @@
                     <span class="input-border"></span>
                   </div>
                 </div>
-                
+
                 <div class="form-group">
                   <div class="inputBox">
                     <input type="email" id="emailid" placeholder=" " required />
@@ -612,7 +616,7 @@
                     <span class="input-border"></span>
                   </div>
                 </div>
-                
+
                 <div class="form-group">
                   <div class="inputBox">
                     <textarea id="msgContent" rows="6" placeholder=" " required></textarea>
@@ -620,7 +624,7 @@
                     <span class="input-border"></span>
                   </div>
                 </div>
-                
+
                 <div class="form-group">
                   <button type="submit" class="submit-btn">
                     <span class="btn-text">Send Message</span>
@@ -631,11 +635,12 @@
             </div>
           </div>
         </div>
-        
+
         <div class="social-section">
           <h3 class="social-title">Follow Me On</h3>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/rajeev-kumar-behera-36403428b/" class="social-link linkedin" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/rajeev-kumar-behera-36403428b/" class="social-link linkedin"
+              title="LinkedIn">
               <i class="fa fa-linkedin"></i>
               <span class="social-text">LinkedIn</span>
             </a>
@@ -714,12 +719,12 @@
         };
 
         // Enhanced form animations and interactions
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
           // Add floating label animation
           const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
-          
+
           inputs.forEach(input => {
-            input.addEventListener('blur', function() {
+            input.addEventListener('blur', function () {
               if (this.value !== '') {
                 this.classList.add('filled');
               } else {
@@ -727,28 +732,28 @@
               }
             });
           });
-          
+
           // Add button loading state
           const submitBtn = document.querySelector('.submit-btn');
           const btnText = submitBtn.querySelector('.btn-text');
           const btnIcon = submitBtn.querySelector('.btn-icon');
-          
-          document.getElementById('contactForm').addEventListener('submit', function() {
+
+          document.getElementById('contactForm').addEventListener('submit', function () {
             submitBtn.disabled = true;
             btnText.textContent = 'Sending...';
             btnIcon.className = 'fa fa-spinner fa-spin btn-icon';
-            
+
             setTimeout(() => {
               submitBtn.disabled = false;
               btnText.textContent = 'Send Message';
               btnIcon.className = 'fa fa-paper-plane btn-icon';
             }, 2000);
           });
-          
+
           // Add smooth scroll animation for contact section
           const contactLinks = document.querySelectorAll('a[href="#contact"]');
           contactLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
               e.preventDefault();
               document.getElementById('contact').scrollIntoView({
                 behavior: 'smooth',
