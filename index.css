@@ -186,10 +186,11 @@
   transition: all 0.3s ease;
 }
 
-.container a:hover {
+.container a:hover, .container a.active {
   background: linear-gradient(90deg, #ff7e5f, #feb47b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transform: scale(1.05);
 }
 
 
@@ -1223,15 +1224,15 @@
 }
 
 .info-icon {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background: linear-gradient(45deg, rgb(245, 122, 77), #8742F5);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  font-size: 24px;
+  font-size: 28px;
   color: white;
 }
 
@@ -1261,7 +1262,7 @@
 }
 
 .form-group {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   position: relative;
 }
 
@@ -1360,6 +1361,7 @@
 .submit-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 30px rgba(245, 122, 77, 0.7);
+  background: linear-gradient(45deg, #ff8c42, #a855f7);
 }
 
 .btn-icon {
@@ -1371,9 +1373,8 @@
 }
 
 /* Alert Messages */
-.alert, .success-alert {
+.alert, .success-alert, .error-alert {
   display: none;
-  background: linear-gradient(45deg, #4caf50, #45a049);
   color: white;
   padding: 15px 20px;
   border-radius: 15px;
@@ -1384,7 +1385,15 @@
   animation: slideDown 0.5s ease;
 }
 
-.alert.show, .success-alert.show {
+.alert, .success-alert {
+  background: linear-gradient(45deg, #4caf50, #45a049);
+}
+
+.error-alert {
+  background: linear-gradient(45deg, #f44336, #d32f2f);
+}
+
+.alert.show, .success-alert.show, .error-alert.show {
   display: flex;
 }
 

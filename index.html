@@ -99,23 +99,11 @@
     <header id="header">
       <div class="container">
         <!-- <a href="#header" class="cursor" >Home<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a> -->
-        <a href="#home" class="cursor"
-          >About<b style="color: rgb(245, 122, 77); font-size: 28px">;</b></a
-        >
-        <a href="#proHead" class="cursor"
-          >Projects<b style="color: rgb(245, 122, 77); font-size: 28px">;</b></a
-        >
-        <a href="#achivements" class="cursor"
-          >Achievements<b style="color: rgb(245, 122, 77); font-size: 28px"
-            >;</b
-          ></a
-        >
-        <a href="#tictac" class="cursor"
-          >Game<b style="color: rgb(245, 122, 77); font-size: 28px">;</b></a
-        >
-        <a href="#contact" class="cursor"
-          >Contact<b style="color: rgb(245, 122, 77); font-size: 28px">;</b></a
-        >
+        <a href="#home" class="cursor">About</a>
+        <a href="#proHead" class="cursor">Projects</a>
+        <a href="#achivements" class="cursor">Achievements</a>
+        <a href="#tictac" class="cursor">Game</a>
+        <a href="#contact" class="cursor">Contact</a>
       </div>
 
       <!-- <section class="slider">          
@@ -843,6 +831,10 @@
                     <i class="fa fa-check-circle"></i>
                     <span>Message sent successfully!</span>
                   </div>
+                  <div class="error-alert">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <span id="error-message">Please check your input and try again.</span>
+                  </div>
 
                   <div class="form-group">
                     <div class="inputBox">
@@ -959,19 +951,36 @@
             var emailid = getElementVal("emailid");
             var msgContent = getElementVal("msgContent");
 
-            if (name && emailid && msgContent) {
-              saveMessages(name, emailid, msgContent);
+            console.log("Form submission attempt:");
+            console.log("Name:", name);
+            console.log("Email:", emailid);
+            console.log("Message:", msgContent);
 
-              document.querySelector(".alert").classList.add("show");
-
-              setTimeout(() => {
-                document.querySelector(".alert").classList.remove("show");
-              }, 3000);
-
-              document.getElementById("contactForm").reset();
-            } else {
-              alert("Please fill in all fields.");
+            // Basic validation
+            if (!name || !emailid || !msgContent) {
+              console.log("Validation failed: Missing required fields");
+              showError("Please fill in all required fields.");
+              return;
             }
+
+            // Email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailid)) {
+              console.log("Validation failed: Invalid email format");
+              showError("Please enter a valid email address.");
+              return;
+            }
+
+            console.log("Validation passed, saving message");
+            saveMessages(name, emailid, msgContent);
+
+            document.querySelector(".alert").classList.add("show");
+
+            setTimeout(() => {
+              document.querySelector(".alert").classList.remove("show");
+            }, 3000);
+
+            document.getElementById("contactForm").reset();
           }
 
           const saveMessages = (name, emailid, msgContent) => {
@@ -986,6 +995,16 @@
 
           const getElementVal = (id) => {
             return document.getElementById(id).value;
+          };
+
+          const showError = (message) => {
+            const errorAlert = document.querySelector(".error-alert");
+            const errorMessage = document.getElementById("error-message");
+            errorMessage.textContent = message;
+            errorAlert.classList.add("show");
+            setTimeout(() => {
+              errorAlert.classList.remove("show");
+            }, 3000);
           };
 
           // Enhanced form animations and interactions
@@ -1030,12 +1049,48 @@
             contactLinks.forEach((link) => {
               link.addEventListener("click", function (e) {
                 e.preventDefault();
+                console.log("Navigation: Contact link clicked");
                 document.getElementById("contact").scrollIntoView({
                   behavior: "smooth",
                   block: "start",
                 });
               });
             });
+
+            // Add logging for all navigation links
+            const navLinks = document.querySelectorAll('.container a');
+            navLinks.forEach((link) => {
+              link.addEventListener("mouseenter", function() {
+                console.log("Navigation: Hovering over", this.textContent);
+              });
+              link.addEventListener("click", function() {
+                console.log("Navigation: Clicking on", this.textContent);
+              });
+            });
+
+            // Active link highlighting based on scroll position
+            function updateActiveLink() {
+              const sections = document.querySelectorAll('section[id]');
+              const scrollY = window.pageYOffset;
+
+              sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                  navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + sectionId) {
+                      link.classList.add('active');
+                    }
+                  });
+                }
+              });
+            }
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink(); // Initial call
           });
         </script>
       </section>
