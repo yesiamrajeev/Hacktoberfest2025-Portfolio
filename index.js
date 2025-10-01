@@ -1,19 +1,25 @@
+// Tic-Tac-Toe Game Variables
 const board = document.getElementById("board");
 const cells = [];
 let currentPlayer = "";
 let playerSymbol = "X";
 let computerSymbol = "O";
 let gameActive = false;
-let playerName = ""; 
+let playerName = "";
 
 // Custom Alert Modal Functions
+/**
+ * Displays a custom alert modal with message and appropriate icon based on game result.
+ * @param {string} message - The message to display in the alert.
+ * @param {boolean} isWin - Whether the alert is for a win (unused in current implementation).
+ */
 function showCustomAlert(message, isWin = false) {
   const modal = document.getElementById('custom-alert');
   const messageEl = document.getElementById('alert-message');
   const icon = document.getElementById('alert-icon');
-  
+
   messageEl.textContent = message;
-  
+
   // Change icon based on result
   if (message.includes('Win') || message === 'You Win!') {
     icon.innerHTML = '🏆';
@@ -25,20 +31,27 @@ function showCustomAlert(message, isWin = false) {
     icon.innerHTML = '😔';
     icon.style.animation = 'fadeIn 0.5s ease';
   }
-  
+
   modal.classList.add('show');
-  
-  // Reset animation
+
+  // Reset animation after it completes
   setTimeout(() => {
     icon.style.animation = '';
   }, 600);
 }
 
+/**
+ * Closes the custom alert modal.
+ */
 function closeCustomAlert() {
   const modal = document.getElementById('custom-alert');
   modal.classList.remove('show');
 }
 
+/**
+ * Initializes and starts a new Tic-Tac-Toe game.
+ * Randomly decides who goes first and clears the board.
+ */
 function startGame() {
   gameActive = true;
 
@@ -54,12 +67,14 @@ function startGame() {
   cells.forEach((cell) => (cell.textContent = ""));
 }
 
+// Create Tic-Tac-Toe board cells and add click event listeners
 for (let i = 0; i < 9; i++) {
   const cell = document.createElement("div");
   cell.className = "cell";
   cells.push(cell);
   board.appendChild(cell);
 
+  // Handle player move on cell click
   cell.addEventListener("click", () => {
     if (cell.textContent === "" && currentPlayer === "Your" && gameActive) {
       cell.textContent = playerSymbol;
@@ -123,6 +138,14 @@ function resetBoard() {
   closeCustomAlert();
 }
 
+// AI Functions for Tic-Tac-Toe
+/**
+ * Minimax algorithm to evaluate the best move for the computer.
+ * @param {Array} board - Current state of the board.
+ * @param {number} depth - Current depth in the game tree.
+ * @param {boolean} isMaximizing - Whether to maximize or minimize the score.
+ * @returns {number} The score of the board state.
+ */
 function minimax(board, depth, isMaximizing) {
   const scores = {
     X: -1,
@@ -160,6 +183,10 @@ function minimax(board, depth, isMaximizing) {
   }
 }
 
+/**
+ * Finds the best move for the computer using minimax.
+ * @returns {number} The index of the best cell to play.
+ */
 function findBestMove() {
   let bestScore = -Infinity;
   let bestMove = -1;
@@ -179,6 +206,11 @@ function findBestMove() {
   return bestMove;
 }
 
+/**
+ * Checks if there's a winner or draw on the given board.
+ * @param {Array} board - The board state to check.
+ * @returns {string|null} 'X', 'O', 'draw', or null if no winner.
+ */
 function checkWin(board) {
   const winningCombinations = [
     [0, 1, 2],
@@ -205,6 +237,7 @@ function checkWin(board) {
   return null;
 }
 
+// DOM Event Listeners and Animations
 document.addEventListener("DOMContentLoaded", function () {
     var homeSection = document.getElementById("home");
 
