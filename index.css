@@ -1348,14 +1348,13 @@
 }
 
 /* Alert Messages */
-.alert, .success-alert {
+.alert {
   display: none;
   background: linear-gradient(45deg, #4caf50, #45a049);
   color: white;
   padding: 15px 20px;
   border-radius: 15px;
   margin-bottom: 20px;
-  display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 500;

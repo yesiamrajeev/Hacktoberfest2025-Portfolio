@@ -821,10 +821,6 @@
                     <i class="fa fa-check-circle"></i>
                     <span>Your message has been sent successfully!</span>
                   </div>
-                  <div class="success-alert">
-                    <i class="fa fa-check-circle"></i>
-                    <span>Message sent successfully!</span>
-                  </div>
 
                   <div class="form-group">
                     <div class="inputBox">
@@ -944,7 +940,7 @@
             if (name && emailid && msgContent) {
               saveMessages(name, emailid, msgContent);
 
-              document.querySelector(".alert").style.display = "block";
+              document.querySelector(".alert").style.display = "flex";
 
               setTimeout(() => {
                 document.querySelector(".alert").style.display = "none";
