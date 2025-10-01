@@ -1,0 +1,211 @@
+/* ==============================
+   Base Reset & Variables
+   ============================== */
+:root {
+  --bg-dark: #0f1724;
+  --bg-light: #f7fbff;
+  --text-dark: #0b1220;
+  --text-light: #e6eef6;
+  --muted: #9aa4b2;
+  --accent: #4f46e5;
+  --radius: 12px;
+  --max-width: 1100px;
+  --gap: 1.25rem;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-light);
+  background: var(--bg-dark);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==============================
+   Layout Helpers
+   ============================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+/* ==============================
+   Typography
+   ============================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+h3 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: none;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--muted);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* ==============================
+   Cards
+   ============================== */
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+/* ==============================
+   Forms
+   ============================== */
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+}
+
+/* ==============================
+   Navigation
+   ============================== */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  color: var(--muted);
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   Utilities
+   ============================== */
+.muted { color: var(--muted); }
+.rounded { border-radius: var(--radius); }
+.shadow { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); }
+.text-center { text-align: center; }
+
+/* ==============================
+   Responsive
+   ============================== */
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
