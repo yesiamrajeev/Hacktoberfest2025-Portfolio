@@ -41,17 +41,21 @@
 }
   
     button {
-      background-color: #4caf50;
+      background-color: #ff3e3e;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-size: 16px;
       border: none;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
     }
   
     button:hover {
-      background-color: #45a049;
+      background-color: #e62020;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
         html {
     scroll-behavior: smooth;
@@ -65,12 +69,11 @@
         padding: 0;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        background-color: rgb(255, 255, 255);
+        background-color: #1a1a2e;
+        background-image: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/Lunar%20New%20Year%202023%2010.png?alt=media&token=b8c90d62-3deb-4e06-965c-d807a617197d);
-        /* background-image: url(./img/Lunar\ New\ Year\ 2023\ 10.png); */
         scrollbar-width:thin; 
         scrollbar-color: #660404 #e73030;
       }
