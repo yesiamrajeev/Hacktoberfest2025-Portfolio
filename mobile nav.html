@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Professional HTML template — responsive, accessible, and production-ready." />
+  <title>Acme — Professional HTML Template</title>
+
+  <!-- Favicons (placeholders) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #4f46e5;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 14px;
+      --max-width: 1100px;
+      --gap: 1.25rem;
+      color-scheme: dark;
+      color: #e6eef6;
+      background: linear-gradient(180deg, #071021 0%, var(--bg) 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Layout */
+    .container{
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:var(--gap);
+      margin-bottom: 1.5rem;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:0.75rem;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo{
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      background: linear-gradient(135deg,var(--accent),#06b6d4);
+      box-shadow: 0 6px 18px rgba(79,70,229,0.18);
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      gap:1rem;
+      list-style:none;
+      margin:0;
+      padding:0;
+      align-items:center;
+    }
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      padding:0.5rem 0.6rem;
+      border-radius:8px;
+      font-weight:600;
+      font-size:0.95rem;
+    }
+    nav a:hover, nav a:focus{ color: #ffffff; background: var(--glass); outline: none; }
+
+    /* hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:2rem;
+      align-items:center;
+      padding:2.25rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      margin-bottom: 2rem;
+    }
+
+    .hero h1{
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      margin:0 0 0.5rem 0;
+      line-height:1.05;
+      letter-spacing:-0.02em;
+    }
+    .hero p{ color:var(--muted); margin:0 0 1.25rem 0; max-width:64ch; }
+
+    .cta{
+      display:flex;
+      gap:0.75rem;
+      flex-wrap:wrap;
+    }
+    .btn{
+      background: var(--accent);
+      color:#fff;
+      border:none;
+      padding:0.85rem 1rem;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow: 0 8px 24px rgba(79,70,229,0.18);
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:none;
+    }
+
+    /* features */
+    .grid{
+      display:grid;
+      gap:1rem;
+    }
+    .features{
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      margin-bottom:2rem;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:1.25rem;
+      border-radius:12px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }
+    .card h3{ margin:0 0 0.5rem 0; font-size:1.05rem; }
+    .card p{ margin:0; color:var(--muted); font-size:0.95rem; }
+
+    /* contact form */
+    form{
+      display:grid;
+      gap:0.75rem;
+      grid-template-columns:1fr 1fr;
+    }
+    form .full{ grid-column: 1 / -1; }
+    label{
+      font-size:0.85rem;
+      color:var(--muted);
+      display:block;
+      margin-bottom:0.35rem;
+    }
+    input, textarea, select{
+      width:100%;
+      padding:0.6rem 0.75rem;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:10px;
+      color:inherit;
+      font-size:0.95rem;
+      resize:vertical;
+    }
+    input:focus, textarea:focus{
+      outline: 2px solid rgba(79,70,229,0.18);
+      border-color: rgba(79,70,229,0.6);
+    }
+
+    /* footer */
+    footer{
+      margin-top:2rem;
+      border-top:1px solid rgba(255,255,255,0.03);
+      padding-top:1rem;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+
+    /* utilities */
+    .muted{ color:var(--muted); }
+    .pill{ display:inline-block; padding:0.25rem 0.6rem; background:rgba(255,255,255,0.03); border-radius:999px; font-weight:600; }
+
+    /* responsive */
+    @media (min-width: 880px){
+      .hero{ grid-template-columns: 1fr 420px; }
+      form { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width:880px){
+      nav ul{ display:none; }
+      #mobile-toggle{ display:inline-flex; }
+      header{ gap:0.5rem; }
+    }
+
+    /* small helpers for accessibility focus-visible */
+    :focus{ outline-offset:3px; }
+  </style>
+</head>
+<body>
+  <div class="container" role="document">
+    <header>
+      <a class="brand" href="/" aria-label="Acme — Home">
+        <div class="logo" aria-hidden="true">A</div>
+        <div>
+          <strong>Acme</strong>
+          <div class="muted" style="font-size:0.85rem;">Modern web UI</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" id="theme-toggle" title="Toggle theme">Theme</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile toggle -->
+      <button id="mobile-toggle" aria-expanded="false" aria-controls="mobile-nav" style="display:none;background:transparent;border:none;color:var(--muted);font-weight:700;">
+        ☰
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="pill" aria-hidden="true">Enterprise-ready</p>
+          <h1 id="hero-title">Build fast, accessible, and maintainable web experiences</h1>
+          <p>Modern markup and progressive enhancement pattern. Accessible by default, optimized for performance, and easy to adapt to your brand. Includes components and a contact form to get you started quickly.</p>
+
+          <div class="cta" role="region" aria-label="Call to actions">
+            <button class="btn" id="primary-cta">Get started</button>
+            <a class="btn secondary" href="#contact">Request demo</a>
+          </div>
+
+          <ul style="display:flex;gap:0.75rem;margin-top:1.25rem;list-style:none;padding:0;">
+            <li class="muted">Trusted by <strong style="color: #fff;">300+</strong> teams</li>
+            <li class="muted">SLA-ready</li>
+          </ul>
+        </div>
+
+        <aside aria-label="Product snapshot" style="padding:1rem;background:rgba(255,255,255,0.02);border-radius:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+            <strong>Snapshot</strong>
+            <span class="muted" style="font-size:0.85rem;">v1.0.0</span>
+          </div>
+          <div style="display:grid;gap:0.5rem;">
+            <div class="card" style="padding:0.75rem;">
+              <div class="muted" style="font-size:0.9rem;">Uptime</div>
+              <div style="font-weight:800;">99.99%</div>
+            </div>
+            <div class="card" style="padding:0.75rem;">
+              <div class="muted" style="font-size:0.9rem;">Avg Response</div>
+              <div style="font-weight:800;">160ms</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="features" class="grid features" aria-labelledby="features-title" style="margin-top:1.25rem;">
+        <h2 id="features-title" style="grid-column: 1 / -1;">Features</h2>
+
+        <article class="card" aria-labelledby="f1">
+          <h3 id="f1">Semantic & Accessible</h3>
+          <p>Clear HTML semantics, ARIA where necessary, keyboard-first interactions, and color contrast considered for accessibility.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f2">
+          <h3 id="f2">Performance-minded</h3>
+          <p>Small CSS footprint, minimal JS, and best-practice loading patterns to keep the page fast on mobile networks.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f3">
+          <h3 id="f3">Responsive design</h3>
+          <p>Grid-based layout that adapts to phones, tablets, and desktops without layout shifts.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f4">
+          <h3 id="f4">Progressive enhancement</h3>
+          <p>Works without JavaScript for core flows; small JS enhances the experience for modern browsers.</p>
+        </article>
+      </section>
+
+      <section id="work" style="margin-top:1.5rem;">
+        <h2>Recent work</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); margin-top:1rem;">
+          <div class="card">
+            <h3>Design system</h3>
+            <p class="muted">Reusable patterns, tokens, and documentation to accelerate development.</p>
+          </div>
+          <div class="card">
+            <h3>Marketing site</h3>
+            <p class="muted">High-conversion landing pages optimized for SEO and speed.</p>
+          </div>
+          <div class="card">
+            <h3>Internal tools</h3>
+            <p class="muted">Accessible admin panels and dashboards with focus on productivity.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:1.75rem;">
+        <h2>Contact</h2>
+        <p class="muted">Send a short message and we'll get back within 1 business day.</p>
+
+        <form id="contact-form" novalidate style="margin-top:0.75rem;">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" placeholder="Jane Doe" />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" placeholder="you@company.com" />
+          </div>
+
+          <div class="full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required aria-required="true"></textarea>
+          </div>
+
+          <div style="display:flex;gap:0.75rem;align-items:center" class="full">
+            <button type="submit" class="btn">Send message</button>
+            <div class="muted" id="form-status" aria-live="polite" style="font-size:0.95rem;"></div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Acme — All rights reserved</div>
+      <div style="display:flex;gap:0.75rem;align-items:center;">
+        <a class="muted" href="/privacy">Privacy</a>
+        <a class="muted" href="/terms">Terms</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Small progressive-enhancement JS: mobile nav, theme toggle, form validation.
+    (function(){
+      // Current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile nav toggle
+      const mobileToggle = document.getElementById('mobile-toggle');
+      if(mobileToggle){
+        mobileToggle.addEventListener('click', () => {
+          const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+          mobileToggle.setAttribute('aria-expanded', String(!expanded));
+          // Create a simple mobile nav (accessible)
+          let nav = document.getElementById('mobile-nav');
+          if(!nav){
+            nav = document.createElement('nav');
+            nav.id = 'mobile-nav';
+            nav.style.position = 'absolute';
+            nav.style.right = '1.25rem';
+            nav.style.top = '4.25rem';
+            nav.style.background = 'rgba(6,8,12,0.9)';
+            nav.style.padding = '0.75rem';
+            nav.style.borderRadius = '12px';
+            nav.style.boxShadow = '0 12px 40px rgba(2,6,23,0.6)';
+            nav.innerHTML = '<a href=\"#features\">Features</a><br/><a href=\"#work\">Work</a><br/><a href=\"#contact\">Contact</a>';
+            document.body.appendChild(nav);
+            mobileToggle._nav = nav;
+          } else {
+            nav.remove();
+          }
+        });
+      }
+
+      // Theme toggle (simple — toggles between dark and light color-scheme)
+      document.getElementById('theme-toggle')?.addEventListener('click', function(e){
+        e.preventDefault();
+        const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+        if(isDark){
+          document.documentElement.setAttribute('data-theme','light');
+          document.documentElement.style.colorScheme = 'light';
+          document.documentElement.style.color = '#0b1220';
+          document.documentElement.style.background = '#f7fbff';
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          document.documentElement.style.colorScheme = 'dark';
+          document.documentElement.style.color = '#e6eef6';
+          document.documentElement.style.background = 'linear-gradient(180deg, #071021 0%, var(--bg) 100%)';
+        }
+      });
+
+      // Form handling (client-side only). In production, replace with a real endpoint.
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('form-status');
+
+      form.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        status.textContent = '';
+        // Simple validation
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+
+        if(!name || !email || !message){
+          status.textContent = 'Please fill all required fields.';
+          status.style.color = '#ffb4b4';
+          return;
+        }
+        // Basic email pattern
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!emailPattern.test(email)){
+          status.textContent = 'Enter a valid email address.';
+          status.style.color = '#ffb4b4';
+          form.email.focus();
+          return;
+        }
+
+        // Simulate async send (progressive enhancement)
+        status.textContent = 'Sending…';
+        status.style.color = 'var(--muted)';
+        // In production, POST to server here. We simulate success:
+        setTimeout(() => {
+          status.textContent = 'Thanks — your message has been sent.';
+          status.style.color = '#b6f5d0';
+          form.reset();
+        }, 700);
+      });
+
+      // Accessibility: focus visible polyfill-ish behavior for keyboard users
+      (function(){
+        let usingKeyboard = false;
+        document.addEventListener('keydown', (e) => { if(e.key === 'Tab') usingKeyboard = true; });
+        document.addEventListener('mousedown', () => usingKeyboard = false);
+        document.addEventListener('focusin', (e) => {
+          if(usingKeyboard) e.target.classList.add('focus-visible');
+        });
+        document.addEventListener('focusout', (e) => e.target.classList.remove('focus-visible'));
+      })();
+    })();
+  </script>
+</body>
+  </html>
+  
