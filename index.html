@@ -1,769 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Raj</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547" type="image/x-icon">
-    <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./index.css">
-
+	<meta charset="UTF-8">
+	<title>Animated Chair Product Page | @coding.stella</title>
+	<link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+	<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+	<link rel="stylesheet" href="./style.css">
 </head>
-<style>
-  .cursor {
-    cursor: row-resize;
-  }
-
-  #btn {
-    position: relative;
-    background-color: rgba(210, 55, 55, 0.7);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    backdrop-filter: blur(15px);
-    transition: all 0.3s ease;
-  }
-
-  #btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: inherit;
-    filter: blur(10px);
-    z-index: -1;
-  }
-
-  #btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
-  }
-
-  #btn:hover::before {
-    background-color: rgba(0, 86, 179, 0.7);
-  }
-
-  .image-container-wrapper {
-    text-align: center;
-  }
-
-
-  .loading-screen {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease-out;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-  
-</style>
 
 <body>
-  <!-- <div id="loading-screen">
-    <div class="loader"></div>
-</div> -->
+  <div class="section-fluid-main">
+    <div class="section">
+      <div class="info-wrap mob-margin">
+        <p class="title-up">Designer Chair</p>
+        <h2>Arto Recline</h2>
+        <h4>$199 <span>$259</span></h4>
 
-<div class="loading-screen" id="loading-screen">
-  <p style="color: rgb(0, 0, 0); font-size: 24px;">Loading...</p>
-</div>
-<script>
-    window.addEventListener('load', function() {
-        var loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.classList.add('hidden');
-        setTimeout(function() {
-            loadingScreen.style.display = 'none';
-        }, 500);
-    });
-</script>
-  <header id="header">
-    <div class="container">
-      <!-- <a href="#header" class="cursor" >Home<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a> -->
-      <a href="#home" class="cursor">About<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a>
-      <a href="#proHead" class="cursor">Projects<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a>
-      <a href="#achivements" class="cursor">Achivements<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a>
-      <a href="#tictac" class="cursor">Game<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a>
-      <a href="#contact" class="cursor">Contact<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a>
-    </div>
+        <div class="section-fluid">
+          <input class="desc-btn" type="radio" id="desc-1" name="desc-btn" checked>
+          <label for="desc-1">Description</label>
 
-    <!-- <section class="slider">          
-          <div class="slides">
-            <div class="item active" id="slide1">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/memount.jpg?alt=media&token=c7bac570-567a-49d6-b694-3ad46cfb6465" alt="slide1" />
-                    <div class="text-overlay">
-                      <p>SELECT <span style="color: red;">*</span> FROM <span style="color: red;">World</span> WHERE <span style="color: red;">"Someone"</span> LIKE <span style="color: red;">"%You%"</span></p>
-                    </div>
-                </div>
-            <div class="item" id="slide2">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium1.png?alt=media&token=e22aaa8c-aa1b-42a3-9d29-a7963ab20de9" alt="slide2" />
-            </div>
-            <div class="item" id="slide3">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium2.jpg?alt=media&token=3d8b95af-8c82-4aa5-a25a-c40efa0da885"  alt="slide3" />
-            </div>
-            <div class="item" id="slide4">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/d3fest2.jpg?alt=media&token=631ac898-55e5-4607-b956-c9afc23292d7" alt="slide4" />
-            </div>
-            <div class="item" id="slide5">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/IMG-20230425-WA0033.jpg?alt=media&token=070928e4-83df-4efd-a2ce-7780d3ce3b65" alt="slide5" />
-            </div>
-            <div class="item" id="slide6">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/innovateodisha.jpg?alt=media&token=6321fbe6-f1d9-49c7-9c74-2c6b6a721ed6" alt="slide6" />
-            </div>
+          <input class="desc-btn" type="radio" id="desc-2" name="desc-btn">
+          <label for="desc-2">Details</label>
+
+          <div class="section-fluid desc-sec accor-1">
+            <p>This chair is crafted with solid beech wood and high-density foam cushioning. Ergonomic design ensures comfort for long seating.</p>
           </div>
-          <div class="buttons" >
-            <i onclick="slider('slide1')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide2')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide3')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide4')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide5')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide6')" class="" aria-hidden="true">o</i>
-          </div>
-        </section> -->
 
-  </header>
-  <section id="home">
-    <div class="content-container">
-      <div class="text-content">
-        <h2>I am <br>
-          <a href="https://git.io/typing-svg">
-            <img
-              src="https://readme-typing-svg.demolab.com?font=Pixelify+Sans&size=40&pause=1000&color=8742F5&background=1E27DC00&random=false&width=340&lines=Rajeev;Android+Developer+;Web+Developer+;Chess+Player+"
-              alt="Typing SVG">
-          </a>
-        </h2>
-
-        <p>Hey there! Android Studio is using me!</p>
-        <p>I excel in Android app development, Bluetooth Low Energy (BLE), image processing,
-          and web development. I’m always interested in building cutting-edge Android applications,
-          delving into IoT applications in BLE, and harnessing the power of image processing algorithms.
-          My skills have been highlighted with remarkable achievements, including winning the Symposium 2023 at ITER
-          and winning the GeeksforGeeks hackathon held at IIIT BBSR.</p>
-        <a href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/certificates%2FRajeev-kumar-Behera-73.pdf?alt=media&token=56854e39-bc74-4786-8ee8-3c1d9c55b363"
-          download="Rajeev_Resume.pdf">
-          <button id="btn">Download Resume</button>
-        </a>
-      </div>
-
-      <div class="image-container-wrapper">
-        <div class="image-container" id="rightSlideImage">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/profile.png?alt=media&token=c0d8808f-3fbb-4010-80e8-2570579a48df"
-            alt="Your Image">
-        </div>
-        <div class="image-text">
-          <p style="color: hsl(0, 0%, 100%); font-size: 25px; font-weight: bold; margin-bottom: 10px;">Rajeev Kumar
-            Behera<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></p>
-          <p style="color: #8742F5; font-size: 15px; margin: 0;">Software Developer</p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-  <section id="proHead">
-    <p class="sheading">
-      Projects<b class="semicolon">;</b>
-      <span
-        style="position: absolute; bottom: -10px; left: 0; width: 10%; height: 6px; background-color: #6c1fe8;"></span>
-    </p>
-  </section>
-  <section id="projects" class="project">
-    <div class="project-container">
-      <div class="project1">
-        <a href="https://github.com/yesiamrajeev/sentenix-proto-1" target="_blank">
-          <img src="./imgproject/sentinexpro.png" class="proimg" alt="Project Image">
-        </a>
-        <div class="project-text1">
-          <p>Sentinex</p>
-        </div>
-      </div>
-
-      <div class="project2">
-        <a href="https://github.com/yesiamrajeev/FaceDetection_Prototype3" target="_blank">
-          <img src="./imgproject/facepro.png" width="15%" height="15%" class="proimg" alt="Project Image">
-        </a>
-        <div class="project-text2">
-          <p>Face Recognition</p>
-        </div>
-      </div>
-
-      <!-- <div class="project3">
-              <a href="https://github.com/example/project2" target="_blank">
-                  <img src="./imgproject/Screenshot 2023-11-29 000733.png" width="15%" height="15%" class="proimg" alt="Project Image">
-              </a>
-              <div class="project-text3">
-                  <p>Project3</p>
-              </div>
-          </div>
-      
-          <div class="project4">
-              <a href="https://github.com/example/project3" target="_blank">
-                  <img src="./imgproject/Screenshot 2023-11-29 000733.png" width="15%" height="15%" class="proimg" alt="Project Image">
-              </a>
-              <div class="project-text4">
-                  <p>Project4</p>
-              </div>
-          </div> -->
-    </div>
-  </section>
-
-  <section class="project">
-    <div class="project-container">
-      <div class="project3">
-        <a href="https://github.com/hacktoberfest-codex/YATRA360" target="_blank">
-          <img src="./imgproject/yatra360.png" width="15%" height="15%" class="proimg" alt="Project Image">
-        </a>
-        <div class="project-text3">
-          <p>Yatra 360</p>
-        </div>
-      </div>
-
-      <div class="project4">
-        <a href="https://github.com/yesiamrajeev/BLE-Scanner" target="_blank">
-          <img src="./imgproject/scanner2.png" width="15%" height="15%" class="proimg" alt="Project Image">
-        </a>
-        <div class="project-text4">
-          <p>BLE Scanner</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="achivements" class="hero">
-    <p class="Aheading">
-      Achivements<b class="semicolon">;</b>
-      <span
-        style="position: absolute; bottom: -10px; left: 0; width: 15%; height: 6px; background-color: #6c1fe8;"></span>
-    </p>
-    <div class="achivements-container">
-      <div class="a1">
-        <div class="achievement-card">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium1.png?alt=media&token=e22aaa8c-aa1b-42a3-9d29-a7963ab20de9"
-            style="object-fit: cover;" alt="Project Image">
-          <div class="text">
-            <h2>Symposium 2023 Winner<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
-            <p>We are thankful that our amazing project Yatra 360 won Symposium 2023 at ITER! Our innovative
-              implementation of CBIR and QBE
-              for indoor navigation systems, complete with advanced 3D image mapping, has captured the attention of
-              scholars and received top
-              honors in a stiff competition. <br> <br> The 6-hour event demonstrated our commitment, culminating in an
-              impressive performance that
-              earned us appreciation from the esteemed faculty, Additional Dean of ITER We are delighted to be
-              recognized for our hard work
-              and honored to have stood tall in the top 3 teams in our division!</p>
+          <div class="section-fluid desc-sec accor-2">
+            <div class="section-inline"><p><span>82</span>cm<br>Length</p></div>
+            <div class="section-inline"><p><span>70</span>cm<br>Width</p></div>
+            <div class="section-inline"><p><span>92</span>cm<br>Height</p></div>
+            <div class="section-inline"><p><span>14</span>kg<br>Weight</p></div>
           </div>
         </div>
+
+        <h5>Choose upholstery:</h5>
       </div>
 
-      <div class="a2">
-        <div class="achievement-card">
-          <div class="text">
-            <h2>D<sup>3</sup> Fest Hackathon Winner 2023<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
-            <p>"Patrologix" my team, won The Geek O Thon, a 24-hour intense hackathon by GeeksforGeeks and IIIT
-              Bhubanswar at D3fest 2023!
-              During our trip, a winning prototype was produced within 24 hours to earn a spot in the final round. The
-              grand finale allowed us to
-              refine our project presentation skills, and present our new ideas to esteemed judges. <br> <br>
-              Sincere thanks to our teammates Sohan Mohanty, Dharmesh Raj and Yajy Goswami for playing an important role
-              in our victory. Our project that empowers communities for
-              security and connectivity.</p>
-          </div>
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/D3fest.jpeg?alt=media&token=7271560b-0049-4a11-b737-2b22ee084fd9"
-            style="object-fit: cover;" alt="Project Image">
-        </div>
+      <div class="clearfix"></div>
+
+      <input class="color-btn for-color-1" type="radio" id="color-1" name="color-btn" checked>
+      <label class="first-color" for="color-1"></label>
+
+      <input class="color-btn for-color-2" type="radio" id="color-2" name="color-btn">
+      <label class="color-2" for="color-2"></label>
+
+      <input class="color-btn for-color-3" type="radio" id="color-3" name="color-btn">
+      <label class="color-3" for="color-3"></label>
+
+      <input class="color-btn for-color-4" type="radio" id="color-4" name="color-btn">
+      <label class="color-4" for="color-4"></label>
+
+      <input class="color-btn for-color-5" type="radio" id="color-5" name="color-btn">
+      <label class="color-5" for="color-5"></label>
+
+      <input class="color-btn for-color-6" type="radio" id="color-6" name="color-btn">
+      <label class="color-6" for="color-6"></label>
+
+      <div class="clearfix"></div>
+
+      <div class="info-wrap">
+        <a href="#" class="btn"><i class="uil uil-shopping-cart icon"></i> Add To Cart</a>
       </div>
 
-      <div class="a3">
-        <div class="achievement-card">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/DSC_1434.png?alt=media&token=caf720e5-1577-4a9c-a633-b26d6a8d9369"
-            style="object-fit: cover;" alt="Project Image">
-          <div class="text">
-            <h2>iFlashers<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
-            <p>In this dynamic visualization, iFlashers unveils its sophisticated indoor navigation service, bypassing
-              the limitations
-              of traditional GPS and the internet, using Bluetooth beacons for real-time location tracking When needed
-              yi Executive Chairman of Startup
-              Odisha Omkar Rai interacts with iFlashers. As India's former DG of Software Technology Parks and a
-              technologist, Omkar Rai expresses
-              appreciation, urging the team to "keep working". <br> <br>Image Software Products features the passion and
-              credentials of Omkar Rai, a leading
-              national advocate for iFlashers. This is a major milestone, where a prominent industry leader has embraced
-              their vision.</p>
-          </div>
-        </div>
-      </div>
+      <div class="img-wrap chair-1"></div>
+      <div class="img-wrap chair-2"></div>
+      <div class="img-wrap chair-3"></div>
+      <div class="img-wrap chair-4"></div>
+      <div class="img-wrap chair-5"></div>
+      <div class="img-wrap chair-6"></div>
 
-      <div class="a4">
-        <div class="achievement-card">
-          <div class="text">
-            <h2>InnovateOdisha Hackathon<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
-            <p>Our team participated in the InnovateOdisha Hackathon, organized by NIT BBSR and Karkhana. It was an
-              incredible experience where we spent 24 hours non-stop coding and developing our project. We worked on an
-              indoor navigation app using BLE technology and received valuable feedback and suggestions for improvement.
-              The event was a fantastic opportunity to innovate, collaborate, and showcase our skills.</p>
-          </div>
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/innovateodisha%20(1).jpg?alt=media&token=f19d8274-ae91-41cc-91b7-2aa3c5d93219"
-            style="object-fit: cover;" alt="Project Image">
-
-        </div>
-      </div>
-
-      <div class="a3">
-        <div class="achievement-card">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/WhatsApp%20Image%202024-04-27%20at%2022.43.57_bb70b429.jpg?alt=media&token=d5bbec97-d744-48a2-be95-befacea4b977"
-            style="object-fit: cover;" alt="Project Image">
-          <div class="text">
-            <h2>SOA Proxima 2024<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h2>
-            <p>Team Patrologix is proud to introduce Sentinex, an innovative project that was born out of resilience and
-              unity, with the goal of enhancing community safety. It all started with a triumphant win at the hackathon
-              hosted by IIIT Bhubaneswar. Since then, Sentinex has continued to evolve, thanks to platforms like Vimarsh
-              & Nirman, which have played a crucial role in refining its impact.
-              <br>
-              The support and guidance of Prof. Anukampa Behera, along with the recognition received at SOA Proxima,
-              have further validated Sentinex's potential to revolutionize community security. It has garnered unanimous
-              praise for its ability to make a real difference in society.
-            <br>
-              This journey has been characterized by unwavering perseverance and well-deserved recognition, which truly
-              exemplify Patrologix's unwavering commitment to innovation and making a positive impact on society.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="a1">
-                                    <div class="a-text1">
-                                        <p>We are thankful that our amazing project Yatra 360 won Symposium 2023 at ITER! Our innovative implementation of CBIR and QBE 
-                                          for indoor navigation systems, complete with advanced 3D image mapping, has captured the attention of scholars and received top 
-                                          honors in a stiff competition. <br> <br> The 6-hour event demonstrated our commitment, culminating in an impressive performance that 
-                                          earned us appreciation from the esteemed faculty, Additional Dean of ITER We are delighted to be recognized for our hard work 
-                                          and honored to have stood tall in the top 3 teams in our division!</p>
-                                          
-                                    </div>
-                                      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium1.png?alt=media&token=e22aaa8c-aa1b-42a3-9d29-a7963ab20de9"  style="object-fit: cover;" class="proimg2" alt="Project Image">
-                              </div>
-              
-                              <div class="a2">
-                                      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/d3.jpg?alt=media&token=d0531982-a19e-40ae-9528-fd4311846f92" width="15%" height="15%" class="proimg3" alt="Project Image">
-                                  <div class="a-text2" style="padding-top: 1px;">
-                                      <p>"Patrologix" my team, won The Geek O Thon, a 24-hour intense hackathon by GeeksforGeeks and IIIT Bhubanswar at D3fest 2023!
-                                        During our trip, a winning prototype was produced within 24 hours to earn a spot in the final round. The grand finale allowed us to
-                                        refine our project presentation skills, and present our new ideas to esteemed judges. <br> <br>
-                                        Sincere thanks to our teammates Sohan Mohanty, Dharmesh Raj and Yajy Goswami for playing an important role in our victory. Our project that empowers communities for
-                                          security and connectivity.</p>
-                                  </div>
-                              </div>
-      
-                              <div class="a3">
-                                <div class="a-text3">
-                                  <p>In this dynamic visualization, iFlashers unveils its sophisticated indoor navigation service, bypassing the limitations
-                                    of traditional GPS and the internet, using Bluetooth beacons for real-time location tracking When needed yi Executive Chairman of Startup 
-                                    Odisha Omkar Rai interacts with iFlashers. As India's former DG of Software Technology Parks and a technologist, Omkar Rai expresses 
-                                    appreciation, urging the team to "keep working". <br> <br>Image Software Products features the passion and credentials of Omkar Rai, a leading 
-                                    national advocate for iFlashers. This is a major milestone, where a prominent industry leader has embraced their vision.</p>
-                              </div>
-                                      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/DSC_1434.png?alt=media&token=caf720e5-1577-4a9c-a633-b26d6a8d9369" width="15%" height="15%" class="proimg2" alt="Project Image">
-                              </div>
-      
-                              <div class="a4">
-                                      <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/innovateodisha%20(1).jpg?alt=media&token=f19d8274-ae91-41cc-91b7-2aa3c5d93219" width="15%" height="15%" class="proimg3" alt="Project Image">
-                                  <div class="a-text4">
-
-                                      <p>Description4</p>
-
-                                  </div>
-                              </div> -->
+      <div class="back-color"></div>
+      <div class="back-color chair-2"></div>
+      <div class="back-color chair-3"></div>
+      <div class="back-color chair-4"></div>
+      <div class="back-color chair-5"></div>
+      <div class="back-color chair-6"></div>
     </div>
-  </section>
+  </div>
 
-
-
-
-  <section id="skills">
-    <div class="card animate-on-scroll">
-      <img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Python Logo" class="logo">
-      <h3>Python</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FAndroid_robot_(2014-2019).svg.png?alt=media&token=35d20daf-0310-45c8-8405-2a424b10c387"
-        alt="Android Logo" class="logo">
-      <h3>Android</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://firebase.google.com/images/brand-guidelines/logo-vertical.png" alt="Firebase Logo" class="logo">
-      <h3>Firebase</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png" alt="GitLab Logo" class="logo">
-      <h3>GitLab</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FVisual_Studio_Icon_2022.svg.png?alt=media&token=54b70743-1c45-4cca-81b4-435ce8186dff"
-        alt="Visual Studio Code Logo" class="logo">
-      <h3>Visual Studio Code</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FEclipse-Luna-Logo.svg.png?alt=media&token=8eca16e1-56cf-4bc6-8f46-7a052051e6d4"
-        alt="Eclipse Logo" class="logo">
-      <h3>Eclipse</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cloud.google.com/images/social-icon-google-cloud-1200-630.png" alt="GCP Logo" class="logo">
-      <h3>GCP</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2F800px-Figma-logo.svg.png?alt=media&token=a8e44a31-b677-4f96-8d71-7ab601e6c168"
-        alt="Figma Logo" class="logo">
-      <h3>Figma</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FAndroid_Studio_Logo_(2023).svg.png?alt=media&token=65b38acb-0e46-4d93-9c7c-04ff2a1b6460"
-        alt="Android Studio Logo" class="logo">
-      <h3>Android Studio</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js Logo" class="logo">
-      <h3>Node.js</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/java-4.svg" alt="Java Logo" class="logo">
-      <h3>Java</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://flask.palletsprojects.com/en/2.0.x/_images/flask-logo.png" alt="Flask Logo" class="logo">
-      <h3>Flask</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React Logo" class="logo">
-      <h3>React</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="imgproject\Kotlin Logo.png" alt="Kotlin Logo" class="logo">
-      <h3>Kotlin</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/github-icon.svg" alt="GitHub Logo" class="logo">
-      <h3>GitHub</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/c.svg" alt="C Logo" class="logo">
-      <h3>C</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/c--4.svg" alt="C++ Logo" class="logo">
-      <h3>C++</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FMySQL_logo.svg.png?alt=media&token=8bbafd45-ce14-424b-8249-7e7c853ce4f5"
-        alt="MySQL Logo" class="logo">
-      <h3>MySQL</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/ubuntu-2.svg" alt="Ubuntu Logo" class="logo">
-      <h3>Ubuntu</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg" alt="Bootstrap Logo" class="logo">
-      <h3>Bootstrap</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" alt="JavaScript Logo" class="logo">
-      <h3>JavaScript</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/git-icon.svg" alt="Git Logo" class="logo">
-      <h3>Git</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/html5-2.svg" alt="HTML Logo" class="logo">
-      <h3>HTML</h3>
-    </div>
-
-    <div class="card animate-on-scroll">
-      <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="CSS Logo" class="logo">
-      <h3>CSS</h3>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-  <section>
-    <div class="tictac-content" id="tictac">
-      <h1>Beat me at this<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></h1>
-      <button onclick="startGame()">Start Game</button>
-      <div class="board" id="board"></div>
-      <p id="turn-info"></p>
-      <script src="./index.js"></script>
-    </div>
-  </section>
-
-  <footer>
-    <section id="contact">
-      <div class="contact-container">
-        <div class="contact-header">
-          <p class="sheading">
-            Contact Me<b class="semicolon">;</b>
-            <span style="position: absolute; bottom: -10px; left: 0; width: 15%; height: 6px; background-color: #6c1fe8;"></span>
-          </p>
-          <p class="contact-subtitle">Ready to start your next project? Let's build something amazing together!</p>
-        </div>
-        
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="info-card">
-              <div class="info-icon">
-                <i class="fa fa-envelope"></i>
-              </div>
-              <h3>Email Me</h3>
-              <p>rajeev.220077@gmail.com</p>
-            </div>
-            
-            <div class="info-card">
-              <div class="info-icon">
-                <i class="fa fa-code"></i>
-              </div>
-              <h3>Specialization</h3>
-              <p>Android & Web Development</p>
-            </div>
-            
-            <div class="info-card">
-              <div class="info-icon">
-                <i class="fa fa-clock-o"></i>
-              </div>
-              <h3>Response Time</h3>
-              <p>Within 24 hours</p>
-            </div>
-          </div>
-          
-          <div class="contact-form-wrapper">
-            <div id="contactForm1">
-              <form action="" id="contactForm">
-                <div class="alert">
-                  <i class="fa fa-check-circle"></i>
-                  <span>Your message has been sent successfully!</span>
-                </div>
-                <div class="success-alert">
-                  <i class="fa fa-check-circle"></i>
-                  <span>Message sent successfully!</span>
-                </div>
-
-                <div class="form-group">
-                  <div class="inputBox">
-                    <input type="text" id="name" placeholder=" " required />
-                    <label for="name">Full Name</label>
-                    <span class="input-border"></span>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <div class="inputBox">
-                    <input type="email" id="emailid" placeholder=" " required />
-                    <label for="emailid">Email Address</label>
-                    <span class="input-border"></span>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <div class="inputBox">
-                    <textarea id="msgContent" rows="6" placeholder=" " required></textarea>
-                    <label for="msgContent">Your Message</label>
-                    <span class="input-border"></span>
-                  </div>
-                </div>
-                
-                <div class="form-group">
-                  <button type="submit" class="submit-btn">
-                    <span class="btn-text">Send Message</span>
-                    <i class="fa fa-paper-plane btn-icon"></i>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        
-        <div class="social-section">
-          <h3 class="social-title">Follow Me On</h3>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/rajeev-kumar-behera-36403428b/" class="social-link linkedin" title="LinkedIn">
-              <i class="fa fa-linkedin"></i>
-              <span class="social-text">LinkedIn</span>
-            </a>
-            <a href="https://github.com/yesiamrajeev" class="social-link github" title="GitHub">
-              <i class="fa fa-github"></i>
-              <span class="social-text">GitHub</span>
-            </a>
-            <a href="mailto:rajeev.220077@gmail.com" class="social-link email" title="Email">
-              <i class="fa fa-envelope"></i>
-              <span class="social-text">Email</span>
-            </a>
-            <a href="https://www.instagram.com/yes._.i._.am/" class="social-link instagram" title="Instagram">
-              <i class="fa fa-instagram"></i>
-              <span class="social-text">Instagram</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
-      <script defer>
-        const firebaseConfig = {
-          apiKey: "",
-          authDomain: "",
-          databaseURL: "",
-          projectId: "",
-          storageBucket: "",
-          messagingSenderId: "",
-          appId: "",
-          measurementId: ""
-        };
-        if (!firebase.apps.length) {
-          firebase.initializeApp(firebaseConfig);
-        }
-
-        var contactFormDB = firebase.database().ref("contactForm");
-
-        document.addEventListener("DOMContentLoaded", function () {
-          document.getElementById("contactForm").addEventListener("submit", submitForm);
-        });
-
-        function submitForm(e) {
-          e.preventDefault();
-
-          var name = getElementVal("name");
-          var emailid = getElementVal("emailid");
-          var msgContent = getElementVal("msgContent");
-
-          if (name && emailid && msgContent) {
-            saveMessages(name, emailid, msgContent);
-
-            document.querySelector(".alert").style.display = "block";
-
-            setTimeout(() => {
-              document.querySelector(".alert").style.display = "none";
-            }, 3000);
-
-            document.getElementById("contactForm").reset();
-          } else {
-            alert("Please fill in all fields.");
-          }
-        }
-
-        const saveMessages = (name, emailid, msgContent) => {
-          var newContactForm = contactFormDB.push();
-
-          newContactForm.set({
-            name: name,
-            emailid: emailid,
-            msgContent: msgContent,
-          });
-        };
-
-        const getElementVal = (id) => {
-          return document.getElementById(id).value;
-        };
-
-        // Enhanced form animations and interactions
-        document.addEventListener("DOMContentLoaded", function() {
-          // Add floating label animation
-          const inputs = document.querySelectorAll('#contactForm input, #contactForm textarea');
-          
-          inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-              if (this.value !== '') {
-                this.classList.add('filled');
-              } else {
-                this.classList.remove('filled');
-              }
-            });
-          });
-          
-          // Add button loading state
-          const submitBtn = document.querySelector('.submit-btn');
-          const btnText = submitBtn.querySelector('.btn-text');
-          const btnIcon = submitBtn.querySelector('.btn-icon');
-          
-          document.getElementById('contactForm').addEventListener('submit', function() {
-            submitBtn.disabled = true;
-            btnText.textContent = 'Sending...';
-            btnIcon.className = 'fa fa-spinner fa-spin btn-icon';
-            
-            setTimeout(() => {
-              submitBtn.disabled = false;
-              btnText.textContent = 'Send Message';
-              btnIcon.className = 'fa fa-paper-plane btn-icon';
-            }, 2000);
-          });
-          
-          // Add smooth scroll animation for contact section
-          const contactLinks = document.querySelectorAll('a[href="#contact"]');
-          contactLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-              e.preventDefault();
-              document.getElementById('contact').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            });
-          });
-        });
-
-      </script>
-    </section>
-    <p>&copy; Rajeev 28 </p>
-
-  </footer>
-
+  <script src="./script.js"></script>
 </body>
+
 
 </html>
