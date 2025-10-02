@@ -456,6 +456,10 @@
       justify-content: center;
       padding: 200px;
     }
+
+    #skills h3 {
+      padding-top: 10px;
+    }
     
     .card {
       width: 100px; /* Adjust width to make the card square */
