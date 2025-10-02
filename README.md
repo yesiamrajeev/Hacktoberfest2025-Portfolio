@@ -172,6 +172,55 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
+
+<td align="center">
+  <a href="https://github.com/ahammadabdullah">
+    <img src="https://avatars.githubusercontent.com/u/77303694?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Ahammad Abdullah</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/nidaa41">
+    <img src="https://avatars.githubusercontent.com/u/218117799?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Nida Sohail</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/RKartikeyan">
+    <img src="https://avatars.githubusercontent.com/u/105120016?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>GSSoC 2025-RKARTIKEYAN</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+</tr>
+<tr>
+<td align="center">
+  <a href="https://github.com/sphinxcastor">
+    <img src="https://avatars.githubusercontent.com/u/145537605?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Abhiram</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/hendrahend">
+    <img src="https://avatars.githubusercontent.com/u/75461724?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Hendra Hendriana</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/ambujvashistha">
+    <img src="https://avatars.githubusercontent.com/u/187491003?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Ambuj Vashistha</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
 </tr>
 </table>
 

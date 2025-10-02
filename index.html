@@ -44,7 +44,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="./index.css" />
+
     <link rel="stylesheet" href="./enhancements.css" />
+
+    <link rel="stylesheet" href="./enhanced-styles.css" />
+
   </head>
   <style>
     .cursor {
@@ -145,39 +149,6 @@
         >
       </nav>
 
-      <!-- <section class="slider">          
-          <div class="slides">
-            <div class="item active" id="slide1">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/memount.jpg?alt=media&token=c7bac570-567a-49d6-b694-3ad46cfb6465" alt="slide1" />
-                    <div class="text-overlay">
-                      <p>SELECT <span style="color: red;">*</span> FROM <span style="color: red;">World</span> WHERE <span style="color: red;">"Someone"</span> LIKE <span style="color: red;">"%You%"</span></p>
-                    </div>
-                </div>
-            <div class="item" id="slide2">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium1.png?alt=media&token=e22aaa8c-aa1b-42a3-9d29-a7963ab20de9" alt="slide2" />
-            </div>
-            <div class="item" id="slide3">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium2.jpg?alt=media&token=3d8b95af-8c82-4aa5-a25a-c40efa0da885"  alt="slide3" />
-            </div>
-            <div class="item" id="slide4">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/d3fest2.jpg?alt=media&token=631ac898-55e5-4607-b956-c9afc23292d7" alt="slide4" />
-            </div>
-            <div class="item" id="slide5">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/IMG-20230425-WA0033.jpg?alt=media&token=070928e4-83df-4efd-a2ce-7780d3ce3b65" alt="slide5" />
-            </div>
-            <div class="item" id="slide6">
-              <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/innovateodisha.jpg?alt=media&token=6321fbe6-f1d9-49c7-9c74-2c6b6a721ed6" alt="slide6" />
-            </div>
-          </div>
-          <div class="buttons" >
-            <i onclick="slider('slide1')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide2')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide3')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide4')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide5')" class="" aria-hidden="true">o</i>
-            <i onclick="slider('slide6')" class="" aria-hidden="true">o</i>
-          </div>
-        </section> -->
     </header>
 
     <section id="home" role="main" aria-labelledby="about-heading">
@@ -216,7 +187,8 @@
           <div class="image-container" id="rightSlideImage">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/profile.png?alt=media&token=c0d8808f-3fbb-4010-80e8-2570579a48df"
-              alt="Your Image"
+               alt=""
+              id="uploadedImage"
             />
           </div>
           <div class="image-text">
@@ -238,6 +210,7 @@
             </p>
           </div>
         </div>
+
       </div>
     </section>
     <section id="proHead">
@@ -350,7 +323,7 @@
 
     <section id="achivements" class="hero">
       <p class="Aheading">
-        Achivements<b class="semicolon">;</b>
+        Achievements<b class="semicolon">;</b>
         <span
           style="
             position: absolute;
@@ -577,9 +550,7 @@
 
       <div class="card animate-on-scroll">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FAndroid_robot_(2014-2019).svg.png?alt=media&token=35d20daf-0310-45c8-8405-2a424b10c387"
-          alt="Android Logo"
-          class="logo"
+          src="imgproject\AndroidLogo.svg" alt="Android Logo" class="logo"
         />
         <h3>Android</h3>
       </div>
@@ -604,8 +575,7 @@
 
       <div class="card animate-on-scroll">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FVisual_Studio_Icon_2022.svg.png?alt=media&token=54b70743-1c45-4cca-81b4-435ce8186dff"
-          alt="Visual Studio Code Logo"
+          src="imgproject\VSCodeLogo.jpeg" alt="Visual Studio Code Logo"
           class="logo"
         />
         <h3>Visual Studio Code</h3>
@@ -613,9 +583,9 @@
 
       <div class="card animate-on-scroll">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FEclipse-Luna-Logo.svg.png?alt=media&token=8eca16e1-56cf-4bc6-8f46-7a052051e6d4"
+          src="imgproject\eclipse_logo.png"
           alt="Eclipse Logo"
-          class="logo"
+          class="logo
         />
         <h3>Eclipse</h3>
       </div>
@@ -631,8 +601,7 @@
 
       <div class="card animate-on-scroll">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2F800px-Figma-logo.svg.png?alt=media&token=a8e44a31-b677-4f96-8d71-7ab601e6c168"
-          alt="Figma Logo"
+          src="imgproject\FigmaLogo.jpeg" alt="Figma Logo"
           class="logo"
         />
         <h3>Figma</h3>
@@ -640,7 +609,7 @@
 
       <div class="card animate-on-scroll">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FAndroid_Studio_Logo_(2023).svg.png?alt=media&token=65b38acb-0e46-4d93-9c7c-04ff2a1b6460"
+          src="imgproject\AndroidSTudio.jpg"
           alt="Android Studio Logo"
           class="logo"
         />
@@ -717,7 +686,7 @@
 
       <div class="card animate-on-scroll">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FMySQL_logo.svg.png?alt=media&token=8bbafd45-ce14-424b-8249-7e7c853ce4f5"
+          src="imgproject\mysql_logo.png"
           alt="MySQL Logo"
           class="logo"
         />
@@ -874,7 +843,16 @@
 
                   <div class="form-group">
                     <div class="inputBox">
-                      <input type="text" id="name" placeholder=" " required />
+                      <input 
+                        type="text" 
+                        id="name" 
+                        name="name"
+                        placeholder=" " 
+                        required 
+                        minlength="2"
+                        data-validate="name" 
+                        aria-label="Full Name"
+                        autocomplete="name" />
                       <label for="name">Full Name</label>
                       <span class="input-border"></span>
                     </div>
@@ -885,8 +863,12 @@
                       <input
                         type="email"
                         id="emailid"
+                        name="email"
                         placeholder=" "
                         required
+                        data-validate="email"
+                        aria-label="Email Address"
+                        autocomplete="email"
                       />
                       <label for="emailid">Email Address</label>
                       <span class="input-border"></span>
@@ -897,9 +879,13 @@
                     <div class="inputBox">
                       <textarea
                         id="msgContent"
+                        name="message"
                         rows="6"
                         placeholder=" "
                         required
+                        minlength="10"
+                        data-validate="message"
+                        aria-label="Your Message"
                       ></textarea>
                       <label for="msgContent">Your Message</label>
                       <span class="input-border"></span>
@@ -907,10 +893,16 @@
                   </div>
 
                   <div class="form-group">
-                    <button type="submit" class="submit-btn">
+                    <button 
+                      type="submit" 
+                      class="submit-btn"
+                      aria-label="Send Message"
+                      data-ripple="true">
                       <span class="btn-text">Send Message</span>
                       <i class="fa fa-paper-plane btn-icon"></i>
+                      <span class="btn-ripple"></span>
                     </button>
+                    <p class="form-privacy-note">Your information is secure and will never be shared.</p>
                   </div>
                 </form>
               </div>
@@ -959,14 +951,14 @@
         <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-database.js"></script>
         <script defer>
           const firebaseConfig = {
-            apiKey: "",
-            authDomain: "",
-            databaseURL: "",
-            projectId: "",
-            storageBucket: "",
-            messagingSenderId: "",
-            appId: "",
-            measurementId: "",
+           apiKey: "AIzaSyASYIx-1VTxdKXHYBnZA2LLLQFgnrYUya0",
+          authDomain: "portfolio-2a7b9.firebaseapp.com",
+          databaseURL: "https://portfolio-2a7b9-default-rtdb.firebaseio.com",
+          projectId: "portfolio-2a7b9",
+          storageBucket: "portfolio-2a7b9.appspot.com",
+          messagingSenderId: "598365410181",
+          appId: "1:598365410181:web:972b00285c63054b53aaec",
+          measurementId: "G-L9JJF5KW1C"
           };
           if (!firebase.apps.length) {
             firebase.initializeApp(firebaseConfig);
@@ -986,20 +978,92 @@
             var name = getElementVal("name");
             var emailid = getElementVal("emailid");
             var msgContent = getElementVal("msgContent");
-
-            if (name && emailid && msgContent) {
+            
+            // Enhanced validation with better error handling
+            try {
+              // Validate name
+              if (!name) {
+                showFieldError("name", "Please enter your name");
+                return;
+              }
+              
+              // Validate email
+              if (!emailid) {
+                showFieldError("emailid", "Please enter your email");
+                return;
+              }
+              
+              // Check if email is valid
+              const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailPattern.test(emailid)) {
+                showFieldError("emailid", "Please enter a valid email address");
+                return;
+              }
+              
+              // Validate message
+              if (!msgContent) {
+                showFieldError("msgContent", "Please enter your message");
+                return;
+              }
+              
+              // All validation passed, save the message
               saveMessages(name, emailid, msgContent);
+              
+              // Show success notification
+              if (window.notificationSystem) {
+                window.notificationSystem.success("Your message has been sent successfully!");
+              } else {
+                document.querySelector(".alert").classList.add("show");
+                setTimeout(() => {
+                  document.querySelector(".alert").classList.remove("show");
+                }, 3000);
+              }
 
-              document.querySelector(".alert").classList.add("show");
-
-              setTimeout(() => {
-                document.querySelector(".alert").classList.remove("show");
-              }, 3000);
-
+              // Reset form
               document.getElementById("contactForm").reset();
-            } else {
-              alert("Please fill in all fields.");
+              
+              // Clear any error states
+              clearAllFieldErrors();
+              
+            } catch (error) {
+              console.error("Form submission error:", error);
+              
+              if (window.notificationSystem) {
+                window.notificationSystem.error("Something went wrong. Please try again.");
+              } else {
+                alert("Something went wrong. Please try again.");
+              }
             }
+          }
+          
+          // Helper function to show field-specific errors
+          function showFieldError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            field.classList.add("input-error");
+            
+            // Check if error message element exists
+            let errorEl = field.parentNode.querySelector(".form-error-message");
+            
+            if (!errorEl) {
+              errorEl = document.createElement("div");
+              errorEl.className = "form-error-message";
+              field.parentNode.appendChild(errorEl);
+            }
+            
+            errorEl.textContent = message;
+            errorEl.style.display = "block";
+            
+            // Focus on the field with error
+            field.focus();
+          }
+          
+          // Clear all error messages
+          function clearAllFieldErrors() {
+            const errorElements = document.querySelectorAll(".form-error-message");
+            const errorFields = document.querySelectorAll(".input-error");
+            
+            errorElements.forEach(el => el.parentNode.removeChild(el));
+            errorFields.forEach(field => field.classList.remove("input-error"));
           }
 
           const saveMessages = (name, emailid, msgContent) => {
@@ -1092,5 +1156,12 @@
 
     <!-- Enhanced Scripts -->
     <script src="./enhancements.js"></script>
+
+   
+    <!-- Enhanced animation and error handling scripts -->
+    <script src="./animations.js"></script>
+    <script src="./errorHandler.js"></script>
+    <script src="./form-animations.js"></script>
+
   </body>
 </html>

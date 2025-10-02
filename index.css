@@ -13,7 +13,7 @@
   font-family: 'Exo 2', sans-serif; 
 
   background-color: #f5f5f5; 
-  background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/red2.png?alt=media&token=36f63aa9-bc3f-430d-b9f5-7b757571b8eb);
+  background-image: url(./imgproject/profile.png);
   background-size: cover; 
   background-position: center center;
   height:470px;
@@ -65,7 +65,7 @@
         padding: 0;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(75, 15, 15);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -871,6 +871,8 @@
               -ms-flex-pack: center;
                   justify-content: center;
           margin-top: -30%;
+          perspective: 1000px; /* Added 3D perspective for better animations */
+          overflow: hidden; /* Prevent overflow during animations */
           /* align-items: right; */
           /* padding-top: 15%;
           padding-bottom: 5%; */
@@ -1282,6 +1284,7 @@
   transition: all 0.3s ease;
   resize: vertical;
   min-height: 50px;
+  box-sizing: border-box;
 }
 
 .inputBox input:focus,
@@ -1368,6 +1371,39 @@
 
 .submit-btn:hover .btn-icon {
   transform: translateX(5px);
+}
+
+/* Ripple effect for buttons */
+.submit-btn[data-ripple="true"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  opacity: 0;
+  border-radius: 50%;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.submit-btn:active .btn-ripple {
+  transform: scale(5);
+  opacity: 1;
+  transition: 0s;
+}
+
+.form-privacy-note {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 10px;
+  text-align: center;
+  font-style: italic;
 }
 
 /* Alert Messages */
@@ -1809,5 +1845,181 @@
     width: 45px;
     height: 45px;
     font-size: 16px;
+  }
+}
+
+/* Confetti animation styles */
+.confetti {
+  position: absolute;
+  top: -20px;
+  z-index: 10;
+  animation: confettiFall 3s ease-in forwards;
+  pointer-events: none;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(650px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Enhanced alert modal styles */
+.alert-modal {
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+/* Loading overlay styles */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(75, 15, 15, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 0.5s ease;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ff0000;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.loading-text {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.alert-modal.show {
+  animation: modalPop 0.5s forwards;
+}
+
+.alert-modal button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.alert-modal button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.alert-modal button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.alert-modal button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* New animations for enhanced effects */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    transform: rotate(-10deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
