@@ -174,6 +174,39 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
 </td>
 
 <td align="center">
+  <a href="https://github.com/pankajbaid567">
+    <img src="https://avatars.githubusercontent.com/u/pankajbaid567" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Pankaj Baid</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="sakshi-sonii">
+    <img src="https://in.pinterest.com/pin/140806234311366/" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Sakshi Soni</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="ChiefPatwal">
+    <img src="https://avatars.githubusercontent.com/u/120747214?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Pankaj Patwal</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+</tr>
+<tr>
+<td align="center">
+  <a href="https://github.com/PeterSamuel">
+    <img src="https://avatars.githubusercontent.com/u/65086865?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Peter Samuel</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
   <a href="https://github.com/ahammadabdullah">
     <img src="https://avatars.githubusercontent.com/u/77303694?v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Ahammad Abdullah</b></sub><br/>
@@ -196,8 +229,7 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
-</tr>
-<tr>
+
 <td align="center">
   <a href="https://github.com/sphinxcastor">
     <img src="https://avatars.githubusercontent.com/u/145537605?v=4" width="100" style="border-radius:50%"/><br/>
@@ -213,11 +245,36 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
-
+</tr>
+<tr>
 <td align="center">
   <a href="https://github.com/ambujvashistha">
     <img src="https://avatars.githubusercontent.com/u/187491003?v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Ambuj Vashistha</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/wrexrus">
+    <img src="https://avatars.githubusercontent.com/u/124819644?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Rushabh Wagh</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/ShauryaRahlon/">
+    <img src="https://avatars.githubusercontent.com/u/175739917?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Shaurya Rahlon</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/Dhanwantisatone">
+    <img src="https://avatars.githubusercontent.com/u/191073548?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Dhanwanti Satone</b></sub><br/>
     <p>Contributor</p>
   </a>
 </td>
