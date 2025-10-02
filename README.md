@@ -174,6 +174,14 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
 </td>
 
 <td align="center">
+  <a href="https://github.com/pankajbaid567">
+    <img src="https://avatars.githubusercontent.com/u/pankajbaid567" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Pankaj Baid</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
   <a href="https://github.com/ahammadabdullah">
     <img src="https://avatars.githubusercontent.com/u/77303694?v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Ahammad Abdullah</b></sub><br/>
@@ -188,7 +196,8 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
-
+</tr>
+<tr>
 <td align="center">
   <a href="https://github.com/RKartikeyan">
     <img src="https://avatars.githubusercontent.com/u/105120016?v=4" width="100" style="border-radius:50%"/><br/>
@@ -196,8 +205,7 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
     <p>Contributor</p>
   </a>
 </td>
-</tr>
-<tr>
+
 <td align="center">
   <a href="https://github.com/sphinxcastor">
     <img src="https://avatars.githubusercontent.com/u/145537605?v=4" width="100" style="border-radius:50%"/><br/>
@@ -218,6 +226,31 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
   <a href="https://github.com/ambujvashistha">
     <img src="https://avatars.githubusercontent.com/u/187491003?v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Ambuj Vashistha</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/wrexrus">
+    <img src="https://avatars.githubusercontent.com/u/124819644?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Rushabh Wagh</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/ShauryaRahlon/">
+    <img src="https://avatars.githubusercontent.com/u/175739917?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Shaurya Rahlon</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+</tr>
+<tr>
+<td align="center">
+  <a href="https://github.com/Dhanwantisatone">
+    <img src="https://avatars.githubusercontent.com/u/191073548?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Dhanwanti Satone</b></sub><br/>
     <p>Contributor</p>
   </a>
 </td>

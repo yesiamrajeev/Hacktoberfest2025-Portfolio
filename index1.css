@@ -40,7 +40,9 @@ img {
 }
 
 /* --- TYPOGRAPHY (Making Words Look Cool) --- */
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     font-family: var(--font-heading);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -49,7 +51,8 @@ h2, h3, h4 {
 
 .semicolon {
     color: var(--primary-red);
-    font-family: var(--font-body); /* Or keep it the same, your choice */
+    font-family: var(--font-body);
+    /* Or keep it the same, your choice */
 }
 
 .section-heading {
@@ -122,10 +125,25 @@ h2, h3, h4 {
     width: 100%;
 }
 
-.hero-content .text-content { flex: 1; }
-.hero-content .image-content { text-align: center; }
-.hero-content .text-content h2 img { max-width: 100%; height: auto; }
-.hero-content .text-content p { font-size: 1.1rem; color: var(--grey-text); margin: 2rem 0; max-width: 500px; }
+.hero-content .text-content {
+    flex: 1;
+}
+
+.hero-content .image-content {
+    text-align: center;
+}
+
+.hero-content .text-content h2 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-content .text-content p {
+    font-size: 1.1rem;
+    color: var(--grey-text);
+    margin: 2rem 0;
+    max-width: 500px;
+}
 
 .image-container {
     border: 3px dashed var(--primary-red);
@@ -138,8 +156,16 @@ h2, h3, h4 {
     transform: rotate(2deg) scale(1.05);
 }
 
-.image-content h3 { font-size: 2rem; margin-top: 1.5rem; }
-.image-content p { color: var(--primary-red); font-family: var(--font-heading); letter-spacing: 1px; }
+.image-content h3 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+.image-content p {
+    color: var(--primary-red);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
 
 /* --- BUTTONS (Click This!) --- */
 .cta-button {
@@ -203,7 +229,7 @@ h2, h3, h4 {
     left: 0;
     width: 100%;
     text-align: center;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
@@ -235,9 +261,19 @@ h2, h3, h4 {
     object-fit: cover;
 }
 
-.achievement-card .text { flex-basis: 60%; }
-.achievement-card h3 { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 1rem; }
-.achievement-card p { color: var(--grey-text); }
+.achievement-card .text {
+    flex-basis: 60%;
+}
+
+.achievement-card h3 {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+.achievement-card p {
+    color: var(--grey-text);
+}
 
 
 /* --- SKILLS SECTION --- */
@@ -262,11 +298,22 @@ h2, h3, h4 {
     border-color: var(--primary-red);
 }
 
-.skill-card img { height: 50px; margin-bottom: 1rem; object-fit: contain; }
-.skill-card span { font-family: var(--font-body); font-weight: 700; }
+.skill-card img {
+    height: 50px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+}
+
+.skill-card span {
+    font-family: var(--font-body);
+    font-weight: 700;
+}
 
 /* --- TIC TAC TOE GAME --- */
-.tictac-content { text-align: center; }
+.tictac-content {
+    text-align: center;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -289,8 +336,15 @@ h2, h3, h4 {
     cursor: pointer;
     transition: background 0.2s;
 }
-.board div:hover { background: #2a2a2a; }
-#turn-info { margin-top: 1rem; font-size: 1.2rem; }
+
+.board div:hover {
+    background: #2a2a2a;
+}
+
+#turn-info {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
 
 /* --- FOOTER & CONTACT --- */
 footer {
@@ -299,7 +353,13 @@ footer {
     text-align: center;
 }
 
-.contact-subtitle { color: var(--grey-text); margin-bottom: 3rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.contact-subtitle {
+    color: var(--grey-text);
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #contactForm {
     max-width: 700px;
@@ -309,8 +369,13 @@ footer {
     gap: 1rem;
 }
 
-#contactForm .input-group { display: flex; gap: 1rem; }
-#contactForm input, #contactForm textarea {
+#contactForm .input-group {
+    display: flex;
+    gap: 1rem;
+}
+
+#contactForm input,
+#contactForm textarea {
     width: 100%;
     padding: 1rem;
     background: #1a1a1a;
@@ -318,9 +383,12 @@ footer {
     color: var(--light-text);
     font-family: var(--font-body);
     font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 20px;
 }
 
-#contactForm input:focus, #contactForm textarea:focus {
+#contactForm input:focus,
+#contactForm textarea:focus {
     outline: none;
     border-color: var(--primary-red);
 }
@@ -333,12 +401,32 @@ footer {
     color: #a7f3d0;
 }
 
-.social-section h3 { font-size: 2rem; margin-bottom: 1rem; }
-.social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; }
-.social-link { font-size: 2rem; color: var(--grey-text); transition: color 0.3s, transform 0.3s; }
-.social-link:hover { color: var(--primary-red); transform: scale(1.2); }
+.social-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 
-.copyright { color: #555; }
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.social-link {
+    font-size: 2rem;
+    color: var(--grey-text);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+    color: var(--primary-red);
+    transform: scale(1.2);
+}
+
+.copyright {
+    color: #555;
+}
 
 /* --- UTILITIES --- */
 .loading-screen {
@@ -352,20 +440,47 @@ footer {
     z-index: 9999;
     transition: opacity 0.5s ease-out;
 }
-.loading-screen.hidden { opacity: 0; pointer-events: none; }
-.loading-screen p { font-family: var(--font-heading); font-size: 3rem; color: var(--primary-red); }
+
+.loading-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-screen p {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--primary-red);
+}
 
 /* --- RESPONSIVE DESIGN (So it doesn't look like garbage on a phone) --- */
 @media (max-width: 768px) {
-    .section-heading { font-size: 2.5rem; }
-    .hero-content { flex-direction: column; text-align: center; }
-    .hero-content .text-content p { margin-left: auto; margin-right: auto; }
+    .section-heading {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content .text-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .achievements-list .achievement-card,
     .achievements-list .achievement-card:nth-child(even) {
         flex-direction: column;
         border: none;
         border-top: 5px solid var(--primary-red);
     }
-    .achievement-card img { max-width: 100%; flex-basis: auto; }
-    #contactForm .input-group { flex-direction: column; }
+
+    .achievement-card img {
+        max-width: 100%;
+        flex-basis: auto;
+    }
+
+    #contactForm .input-group {
+        flex-direction: column;
+    }
 }

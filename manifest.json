@@ -1,0 +1,29 @@
+{
+  "name": "Rajeev Kumar Behera - Portfolio",
+  "short_name": "RKB Portfolio",
+  "description": "Portfolio website showcasing projects, achievements, and skills of Rajeev Kumar Behera",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8742f5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["portfolio", "developer", "android", "web"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "./",
+  "prefer_related_applications": false
+}
