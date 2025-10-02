@@ -47,6 +47,12 @@ build/Release
 # Dependency directories
 node_modules/
 
+# parcel cache directory
+.parcel-cache
+
+# bundler cache directory
+dist/
+
 # Optional npm cache directory
 .npm
 
