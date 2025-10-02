@@ -1,7 +1,7 @@
 
-# 🌟 Contributing to Hacktoberfest2024🧑‍💻
+# 🌟 Contributing to Hacktoberfest2025🧑‍💻
 
-Thank you for considering contributing to our project! We’re excited to collaborate with you during **Hacktoberfest 2024**.
+Thank you for considering contributing to our project! We’re excited to collaborate with you during **Hacktoberfest 2025**.
 
 Whether you're new to open source or an experienced developer, this guide will help you make a smooth contribution to the project.
 
@@ -12,7 +12,7 @@ Hacktoberfest is an annual celebration of open source, organized by DigitalOcean
 ### How to Participate:
 
 - Register for Hacktoberfest [here](https://hacktoberfest.com) (if you haven't already).
-- Submit **at least 4 Pull Requests (PRs)** to any open-source repository between `October 1` and `October 31`, 2024.
+- Submit **at least 6 Pull Requests (PRs)** to any open-source repository between `October 1` and `October 31`, 2025.
 - Contributions can be bug fixes, features, documentation improvements, or even small changes like typo corrections.
 
 ⚠️ **Note**: Spammy or automated PRs will be flagged and disqualified from Hacktoberfest.
