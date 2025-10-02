@@ -136,6 +136,24 @@
                 <button onclick="startGame()" class="cta-button">Start Game</button>
                 <div class="board" id="board"></div>
                 <p id="turn-info"></p>
+                <div class="game-statistics">
+                    <h3>Game Statistics<span class="semicolon">;</span></h3>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <span class="stat-label">Wins</span>
+                            <span class="stat-value" id="wins-count">0</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Losses</span>
+                            <span class="stat-value" id="losses-count">0</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Draws</span>
+                            <span class="stat-value" id="draws-count">0</span>
+                        </div>
+                    </div>
+                    <button onclick="resetGameStats()" class="reset-stats-button">Reset Stats</button>
+                </div>
             </div>
         </section>
 
@@ -219,5 +237,22 @@
             }
         });
     </script>
+
+    <!-- Custom Alert Modal -->
+    <div id="custom-alert" class="alert-modal">
+      <div class="alert-overlay"></div>
+      <div class="alert-content">
+        <div class="alert-icon" id="alert-icon">🏆</div>
+        <div class="alert-message" id="alert-message">You Win!</div>
+        <div class="alert-subtext">Game will restart shortly...</div>
+        <div class="alert-decoration">
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+          <div class="particle"></div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
