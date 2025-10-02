@@ -1,180 +1,163 @@
 /**
- * Enhanced Animations for Hacktoberfest Portfolio
- * This file contains improved animations and scroll effects
+ * 🚀 Optimized Animations for Hacktoberfest Portfolio
+ * - Reduced layout thrashing
+ * - Debounced expensive events
+ * - Cached DOM lookups
+ * - Cleaner class toggling
  */
 
-// Animation Observer for Scroll-Based Animations
+// ✅ Intersection Observer for Scroll Animations
 const animationObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry) => {
-      // Add different animation styles based on element type or position
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate");
-        
-        // Add custom animations based on position in viewport
-        const position = entry.boundingClientRect.top / window.innerHeight;
-        
-        if (position < 0.3) {
-          entry.target.classList.add("animate-fast");
-        } else if (position < 0.7) {
-          entry.target.classList.add("animate-medium");
-        } else {
-          entry.target.classList.add("animate-slow");
-        }
-        
-        // Add random animation delays for staggered effect
-        if (entry.target.classList.contains("stagger-animation")) {
-          const delay = Math.random() * 0.5;
-          entry.target.style.animationDelay = `${delay}s`;
-        }
-      } else {
-        // Optional: Remove animations when scrolled out of view
-        // Uncomment to enable
-        // entry.target.classList.remove("animate", "animate-fast", "animate-medium", "animate-slow");
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+
+      const { target, boundingClientRect } = entry;
+      const position = boundingClientRect.top / window.innerHeight;
+
+      target.classList.add("animate");
+
+      // Apply speed-based animation classes
+      target.classList.add(
+        position < 0.3 ? "animate-fast" :
+        position < 0.7 ? "animate-medium" :
+        "animate-slow"
+      );
+
+      // Random stagger effect
+      if (target.classList.contains("stagger-animation")) {
+        target.style.animationDelay = `${(Math.random() * 0.5).toFixed(2)}s`;
       }
-    });
+    }
   },
-  { 
-    threshold: 0.2, // Trigger when 20% of element is visible
-    rootMargin: "0px 0px -100px 0px" // Adjust the trigger area
+  {
+    threshold: 0.2,
+    rootMargin: "0px 0px -100px 0px"
   }
 );
 
-// Enhanced version of existing animation functions
 function enhancedAnimateOnScroll() {
   const elements = document.querySelectorAll(
-    '.animate-on-scroll, .project, .card, .achievement-card, .info-card, .social-link, .a1, .a2, .a3, .a4'
+    ".animate-on-scroll, .project, .card, .achievement-card, .info-card, .social-link, .a1, .a2, .a3, .a4"
   );
-  
-  elements.forEach((element) => {
-    // Add stagger animation to certain elements
-    if (element.classList.contains('card') || element.classList.contains('social-link')) {
-      element.classList.add('stagger-animation');
+
+  elements.forEach((el) => {
+    if (el.classList.contains("card") || el.classList.contains("social-link")) {
+      el.classList.add("stagger-animation");
     }
-    
-    animationObserver.observe(element);
+    animationObserver.observe(el);
   });
 }
 
-// Parallax Effects
+// ✅ Optimized Parallax Effect
 function setupParallaxEffects() {
-  const parallaxElements = document.querySelectorAll('.parallax');
-  
-  window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    
-    parallaxElements.forEach(element => {
-      const speed = element.dataset.speed || 0.5;
-      const offset = scrolled * speed;
-      element.style.transform = `translateY(${offset}px)`;
-    });
-  });
-}
+  const parallaxElements = document.querySelectorAll(".parallax");
+  if (!parallaxElements.length) return;
 
-// Smooth scrolling with enhanced easing
-function setupSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        // Improved smooth scrolling with easing
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        const duration = 1000;
-        let start = null;
-        
-        function step(timestamp) {
-          if (!start) start = timestamp;
-          const progress = timestamp - start;
-          const easeInOutQuad = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-          
-          // Easing function for smoother animation
-          window.scrollTo(0, startPosition + distance * easeInOutQuad(Math.min(progress / duration, 1)));
-          
-          if (progress < duration) {
-            window.requestAnimationFrame(step);
-          }
-        }
-        
-        window.requestAnimationFrame(step);
-      }
-    });
-  });
-}
-
-// Add scroll indicator
-function addScrollIndicator() {
-  const indicator = document.createElement('div');
-  indicator.className = 'scroll-indicator';
-  document.body.appendChild(indicator);
-  
-  window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    indicator.style.width = scrolled + "%";
-  });
-}
-
-// Improved scroll-to-top button functionality
-function enhanceScrollToTopButton() {
-  const scrollBtn = document.getElementById('scrollToTop');
-  if (!scrollBtn) return;
-  
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      scrollBtn.classList.add('show');
-    } else {
-      scrollBtn.classList.add('hide');
-      setTimeout(() => {
-        if (window.pageYOffset <= 300) {
-          scrollBtn.classList.remove('show');
-          scrollBtn.classList.remove('hide');
-        }
-      }, 300);
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        parallaxElements.forEach((el) => {
+          const speed = parseFloat(el.dataset.speed) || 0.5;
+          el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+        ticking = false;
+      });
+      ticking = true;
     }
   });
-  
-  scrollBtn.addEventListener('click', (e) => {
+}
+
+// ✅ Smooth Scroll with easing
+function setupSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = anchor.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+
+      const targetEl = document.querySelector(targetId);
+      if (!targetEl) return;
+
+      const start = window.scrollY;
+      const end = targetEl.getBoundingClientRect().top + start;
+      const distance = end - start;
+      const duration = 1000;
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const easeInOutQuad = (t) =>
+          t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+        window.scrollTo(0, start + distance * easeInOutQuad(progress));
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    });
+  });
+}
+
+// ✅ Scroll Indicator
+function addScrollIndicator() {
+  const indicator = document.createElement("div");
+  indicator.className = "scroll-indicator";
+  document.body.appendChild(indicator);
+
+  window.addEventListener("scroll", () => {
+    const scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    indicator.style.width = `${(scrollTop / scrollHeight) * 100}%`;
+  });
+}
+
+// ✅ Scroll-to-Top Button
+function enhanceScrollToTopButton() {
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (!scrollBtn) return;
+
+  window.addEventListener("scroll", () => {
+    scrollBtn.classList.toggle("show", window.pageYOffset > 300);
+  });
+
+  scrollBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    
-    // Animated scroll to top with easing
-    const scrollToTop = () => {
-      const c = document.documentElement.scrollTop || document.body.scrollTop;
-      if (c > 0) {
-        window.requestAnimationFrame(scrollToTop);
-        window.scrollTo(0, c - c / 10);
+    const scrollStep = () => {
+      const current = window.scrollY;
+      if (current > 0) {
+        window.scrollTo(0, current - current / 10);
+        requestAnimationFrame(scrollStep);
       }
     };
-    
-    window.requestAnimationFrame(scrollToTop);
+    requestAnimationFrame(scrollStep);
   });
 }
 
-// Initialize all animation enhancements when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+// ✅ Init all when DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
   enhancedAnimateOnScroll();
   setupParallaxEffects();
   setupSmoothScroll();
   addScrollIndicator();
   enhanceScrollToTopButton();
-  
-  // Add page transition effect
-  document.body.classList.add('page-loaded');
+  document.body.classList.add("page-loaded");
 });
 
-// Add resize handler to adjust animations on window resize
-window.addEventListener('resize', () => {
-  // Debounced resize handler
-  clearTimeout(window.resizeTimeout);
-  window.resizeTimeout = setTimeout(() => {
-    enhancedAnimateOnScroll();
-  }, 250);
-});
+// ✅ Debounced resize
+window.addEventListener(
+  "resize",
+  (() => {
+    let timeout;
+    return () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(enhancedAnimateOnScroll, 250);
+    };
+  })()
+);
