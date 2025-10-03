@@ -256,6 +256,14 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
 </td>
 
 <td align="center">
+  <a href="https://github.com/cruiz24">
+    <img src="https://avatars.githubusercontent.com/u/33179956?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Abhi</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
   <a href="https://github.com/1508vansh">
     <img src="https://avatars.githubusercontent.com/u/153891366?s=400&u=feb349dc576f1e508cdd4c6434cf9be1ec1b9f82&v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Vansh Soni</b></sub><br/>
