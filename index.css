@@ -1437,8 +1437,11 @@ h3 {
 
 .form-group {
   margin-bottom: 30px;
-
   position: relative;
+}
+
+.form-group:has(.submit-btn) {
+  text-align: center;
 }
 
 .inputBox {
@@ -1516,7 +1519,8 @@ h3 {
   background: linear-gradient(45deg, rgb(245, 122, 77), #8742F5);
   color: white;
   border: none;
-  margin-left: 22px;
+  margin: 0 auto;
+  display: flex;
   padding: 15px 40px;
   border-radius: 50px;
   font-size: 16px;
@@ -1525,7 +1529,6 @@ h3 {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;

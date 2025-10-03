@@ -310,7 +310,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // PWA Service Worker Registration
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+    // navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register(new URL('/sw.js', import.meta.url))
       .then(registration => {
         console.log('SW registered: ', registration);
       })
