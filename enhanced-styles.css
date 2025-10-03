@@ -1,0 +1,408 @@
+/* 
+ * Enhanced Animation and Error Handling Styles
+ * This file contains CSS for improved animations and error messages
+ */
+
+/* ----- ANIMATION UTILITIES ----- */
+
+/* Different animation speeds */
+.animate-fast {
+  animation-duration: 0.5s !important;
+}
+
+.animate-medium {
+  animation-duration: 0.8s !important;
+}
+
+.animate-slow {
+  animation-duration: 1.2s !important;
+}
+
+/* Staggered animations delay */
+.stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animation:nth-child(6) { animation-delay: 0.15s; }
+.stagger-animation:nth-child(7) { animation-delay: 0.25s; }
+.stagger-animation:nth-child(8) { animation-delay: 0.35s; }
+.stagger-animation:nth-child(9) { animation-delay: 0.45s; }
+.stagger-animation:nth-child(n+10) { animation-delay: 0.2s; }
+
+/* Enhanced animation keyframes */
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes rotateIn {
+  from { transform: rotate(-45deg) scale(0.5); opacity: 0; }
+  to { transform: rotate(0) scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  40% { transform: scale(1.1); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideUpIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDownIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideLeftIn {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRightIn {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ----- ENHANCED PAGE TRANSITIONS ----- */
+
+/* Initial body state (before JS loads) */
+body {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* After JS loads and adds this class */
+body.page-loaded {
+  opacity: 1;
+}
+
+/* ----- SCROLL INDICATOR ----- */
+
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, rgb(245, 122, 77), #8742F5);
+  z-index: 9999;
+  transition: width 0.3s ease;
+}
+
+/* ----- ENHANCED SCROLL TO TOP BUTTON ----- */
+
+.scroll-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgb(245, 122, 77), #8742F5);
+  color: white;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  box-shadow: 0 4px 20px rgba(245, 122, 77, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(245, 122, 77, 0.7);
+  background: linear-gradient(45deg, rgb(255, 140, 90), #9c5aff);
+}
+
+.scroll-top-btn.show {
+  display: flex;
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+.scroll-top-btn.hide {
+  animation: fadeOutDown 0.3s ease forwards;
+}
+
+/* ----- PARALLAX ELEMENTS ----- */
+
+.parallax {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ----- ENHANCED CARD ANIMATIONS ----- */
+
+.card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+}
+
+.card.animate {
+  animation: fadeIn 0.6s ease forwards, slideUpIn 0.7s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ----- PROJECT ANIMATIONS ----- */
+
+.project.animate:nth-child(odd) {
+  animation: slideLeftIn 0.8s ease-in-out forwards;
+}
+
+.project.animate:nth-child(even) {
+  animation: slideRightIn 0.8s ease-in-out forwards;
+}
+
+/* ----- ACHIEVEMENT CARD ANIMATIONS ----- */
+
+.achievement-card {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-card img {
+  transition: all 0.7s ease-in-out;
+}
+
+.achievement-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ----- SOCIAL LINK ANIMATIONS ----- */
+
+.social-link {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.social-link:hover {
+  transform: translateY(-5px) rotate(5deg) scale(1.2);
+}
+
+/* ----- ERROR HANDLING & FORM VALIDATION STYLES ----- */
+
+/* Form error messages */
+.form-error-message {
+  color: #ff3d57;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: none;
+  padding-left: 5px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Input styling for error state */
+.input-error {
+  border-color: #ff3d57 !important;
+  background-color: rgba(255, 61, 87, 0.05) !important;
+  box-shadow: 0 0 10px rgba(255, 61, 87, 0.1) !important;
+}
+
+.input-error:focus {
+  border-color: #ff3d57 !important;
+}
+
+/* Enhanced notification system */
+.notification-container {
+  position: fixed;
+  z-index: 9999;
+  max-width: 350px;
+  width: 100%;
+}
+
+.notification-container.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.notification-container.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.notification-container.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.notification-container.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.notification {
+  background: rgba(30, 30, 30, 0.9);
+  color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  backdrop-filter: blur(10px);
+  border-left: 4px solid #555;
+}
+
+.notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.notification.hiding {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.notification-success {
+  border-left-color: #4caf50;
+}
+
+.notification-error {
+  border-left-color: #ff3d57;
+}
+
+.notification-warning {
+  border-left-color: #ff9800;
+}
+
+.notification-info {
+  border-left-color: #2196f3;
+}
+
+.notification-icon {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.notification-success .notification-icon {
+  color: #4caf50;
+}
+
+.notification-error .notification-icon {
+  color: #ff3d57;
+}
+
+.notification-warning .notification-icon {
+  color: #ff9800;
+}
+
+.notification-info .notification-icon {
+  color: #2196f3;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.notification-close:hover {
+  color: white;
+}
+
+.notification-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ----- LOADING SCREEN ENHANCEMENTS ----- */
+
+.loading-screen {
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-screen:after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(245, 122, 77, 0.3);
+  border-top-color: rgb(245, 122, 77);
+  border-radius: 50%;
+  animation: loader-spin 1s linear infinite;
+  margin-top: 60px;
+}
+
+@keyframes loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ----- RESPONSIVE ADJUSTMENTS ----- */
+
+@media (max-width: 768px) {
+  .notification-container {
+    max-width: 90%;
+    width: 90%;
+    right: 5%;
+    left: 5%;
+  }
+  
+  .scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .achievement-card:hover {
+    transform: translateY(-3px);
+  }
+}

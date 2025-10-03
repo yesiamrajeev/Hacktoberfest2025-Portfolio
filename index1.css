@@ -39,8 +39,10 @@ img {
     height: auto;
 }
 
-/* --- TYPOGRAPHY --- */
-h2, h3, h4 {
+/* --- TYPOGRAPHY (Making Words Look Cool) --- */
+h2,
+h3,
+h4 {
     font-family: var(--font-heading);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -84,7 +86,6 @@ h2, h3, h4 {
     background: rgba(18, 18, 18, 0.8);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #333;
-    /* MODIFIED: To position the toggle button */
     display: flex; 
     flex-wrap: wrap;
     align-items: center;
@@ -101,9 +102,9 @@ h2, h3, h4 {
     width: 100%; 
 }
 
-/* --- NEW: MENU TOGGLE BUTTON STYLES --- */
+/* --- MENU TOGGLE BUTTON STYLES --- */
 .menu-toggle {
-    display: none; /* Hide by default on large screens */
+    display: none;
     background: none;
     border: none;
     color: var(--primary-red);
@@ -256,7 +257,7 @@ h2, h3, h4 {
     left: 0;
     width: 100%;
     text-align: center;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     transform: translateY(100%);
     transition: transform 0.3s ease;
     color: var(--primary-red);
@@ -340,7 +341,7 @@ h2, h3, h4 {
     font-weight: 700;
 }
 
-/* --- TIC TAC TOE --- */
+/* --- TIC TAC TOE GAME --- */
 .tictac-content {
     text-align: center;
 }
@@ -407,7 +408,8 @@ footer {
     flex-wrap: wrap;
 }
 
-#contactForm input, #contactForm textarea {
+#contactForm input,
+#contactForm textarea {
     width: 100%;
     padding: 1rem;
     background: #1a1a1a;
@@ -418,7 +420,8 @@ footer {
     border-radius: 6px;
 }
 
-#contactForm input:focus, #contactForm textarea:focus {
+#contactForm input:focus,
+#contactForm textarea:focus {
     outline: none;
     border-color: var(--primary-red);
 }
@@ -488,7 +491,6 @@ footer {
 /* --- RESPONSIVE DESIGN (INCLUDING MENU TOGGLE) --- */
 /* -------------------------------------------------------- */
 
-/* Container Padding for very small devices */
 @media (max-width: 480px) {
     .container {
         padding-left: 1rem;
@@ -496,21 +498,17 @@ footer {
         padding-top: 2rem; 
         padding-bottom: 2rem;
     }
-    
     .section-heading {
         font-size: 2.2rem; 
         white-space: normal; 
     }
-
     .image-container img {
         max-height: 250px;
         object-fit: contain;
     }
 }
 
-/* Mobile Layouts for Screen Widths up to 768px */
 @media (max-width: 768px) {
-    
     .section-heading {
         font-size: 2.5rem;
     }
@@ -528,49 +526,39 @@ footer {
     .hero-content .image-content {
         margin-top: 2rem;
     }
-
-    /* MENU TOGGLE BEHAVIOR */
     .main-header {
-        /* Align items so that the nav content (container) is centered 
-           when the menu is open, or just use space-between for toggle and container */
         justify-content: space-between; 
         padding: 0.5rem 1rem;
-        flex-wrap: nowrap; /* Prevent nav from wrapping on small screen when closed */
-        position: relative; /* Context for absolute positioning of nav/toggle */
+        flex-wrap: nowrap;
+        position: relative;
     }
-
     .menu-toggle {
-        display: block; /* Show the hamburger button */
+        display: block;
         order: 1;
         position: absolute;
         top: 0.5rem;
         right: 1rem;
     }
-
     .main-nav {
-        /* Mobile Menu Default State (Hidden) */
         display: none; 
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
         position: absolute;
-        top: 100%; /* Position below the header bar */
+        top: 100%;
         left: 0;
         width: 100%;
         background: var(--dark-bg);
         border-top: 1px solid var(--primary-red);
-        padding: 0; /* Links handle padding */
+        padding: 0;
         min-height: 50vh;
     }
-
-    /* Mobile Menu Active State (Shown) */
     .main-nav.active {
         display: flex;
         z-index: 90; 
     }
-
     .main-nav a {
-        flex: 1 1 100%; /* Links take full width */
+        flex: 1 1 100%;
         font-size: 1.8rem; 
         padding: 1rem 0;
         text-align: center;
@@ -579,9 +567,6 @@ footer {
     .main-nav a:last-child {
         border-bottom: none;
     }
-    /* END MENU TOGGLE BEHAVIOR */
-
-
     .achievements-list .achievement-card,
     .achievements-list .achievement-card:nth-child(even) {
         flex-direction: column;
@@ -608,24 +593,19 @@ footer {
     }
 }
 
-/* Further optimizations for smaller screens (e.g., phones) */
 @media (max-width: 600px) {
     .main-nav {
-        /* When menu is open, it takes up the screen */
         min-height: 100vh;
     }
-    
     .cta-button {
         width: 100%;
         padding: 1rem;
     }
-
     .project-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
-/* Project cards stack single column on very small devices */
 @media (max-width: 480px) {
     .project-grid {
         grid-template-columns: 1fr;
@@ -634,7 +614,6 @@ footer {
     .project-title {
         font-size: 1.5rem;
     }
-    
     .skill-card {
         flex: 1 1 45%;
         max-width: 45%;
@@ -659,5 +638,12 @@ footer {
         width: 60px;
         height: 60px;
         font-size: 2rem;
+    }
+    .achievement-card img {
+        max-width: 100%;
+        flex-basis: auto;
+    }
+    #contactForm .input-group {
+        flex-direction: column;
     }
 }

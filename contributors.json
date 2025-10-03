@@ -35,29 +35,108 @@
     "role": "Contributor",
     "avatar": "https://github.com/KrishnaSaxena108.png"
   },
-
-  {
-    "name": "Sakshi Soni",
-    "github": "sakshi-sonii",
-    "role": "Contributor",
-    "avatar": "https://in.pinterest.com/pin/140806234311366/"
-  },
-  {
-    "name": "Pankaj Patwal",
-    "github": "ChiefPatwal",
-    "role": "Contributor",
-    "avatar": "https://avatars.githubusercontent.com/u/120747214?v=4"
-  },
-  {
-    "name": "Peter Samuel",
-    "github": "https://github.com/PeterSamuel",
-    "role": "Contributor",
-    "avatar": "https://avatars.githubusercontent.com/u/65086865?v=4"
-  },
+{
+  "name": "Sakshi Soni",
+  "github": "sakshi-sonii",
+  "role": "Contributor",
+  "avatar": "https://in.pinterest.com/pin/140806234311366/"
+},
+{
+  "name": "Pankaj Patwal",
+  "github": "ChiefPatwal",
+  "role": "Contributor",
+  "avatar": "https://avatars.githubusercontent.com/u/120747214?v=4"
+},
+{
+  "name": "Peter Samuel",
+  "github": "https://github.com/PeterSamuel",
+  "role": "Contributor",
+  "avatar": "https://avatars.githubusercontent.com/u/65086865?v=4"
+},
+{
+  "name": "Pankaj Baid",
+  "github": "https://github.com/pankajbaid567",
+  "role": "Contributor",
+  "avatar": "https://avatars.githubusercontent.com/u/pankajbaid567"
+},
   {
     "name": "Ahammad Abdullah",
     "github": "https://github.com/ahammadabdullah",
     "role": "Contributor",
     "avatar": "https://avatars.githubusercontent.com/u/77303694?v=4"
+  },
+  {
+    "name": "Nida Sohail",
+    "github": "https://github.com/nidaa41",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/218117799?v=4"
+  },
+  {
+    "name": "GSSoC 2025-RKARTIKEYAN",
+    "github": "https://github.com/RKartikeyan",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/105120016?v=4"
+  },
+  {
+    "name": "Abhiram",
+    "github": "https://github.com/sphinxcastor",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/145537605?v=4"
+  },
+  {
+    "name": "Hendra Hendriana",
+    "github": "https://github.com/hendrahend",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/75461724?v=4"
+  },
+  {
+    "name": "Ambuj Vashistha",
+    "github": "https://github.com/ambujvashistha",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/187491003?v=4"
+  },
+  {
+
+    "name": "Rushabh Wagh",
+    "github": "https://github.com/wrexrus",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/124819644?v=4"
+  },{
+    "name": "Shaurya Rahlon",
+    "github": "https://github.com/ShauryaRahlon/",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/175739917?v=4"
+  },
+  {
+    "name": "Dhanwanti Satone",
+    "github": "https://github.com/Dhanwantisatone",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/191073548?v=4"
+  },
+  {
+    "name": "Abhi",
+    "github": "https://github.com/cruiz24",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/33179956?v=4"
+  },
+ {
+   "name": "Vansh Soni",
+   "github": "https://github.com/1508vansh",
+   "role": "Contributor",
+   "avatar": "https://avatars.githubusercontent.com/u/153891366?s=400&u=feb349dc576f1e508cdd4c6434cf9be1ec1b9f82&v=4"
+ },
+  {
+    "name": "Ujjwal Rai",
+    "github": "https://github.com/ujjwalrai01",
+    "role": "Contributor",
+    "avatar": "https://avatars.githubusercontent.com/u/152022994?v=4"
   }
+  ,
+{
+  "name": "Akash Dhar Dubey",
+  "github": "https://github.com/AKASHDHARDUBEY",
+  "role": "Contributor",
+  "avatar": "https://avatars.githubusercontent.com/u/184285082?v=4"
+}
+
 ]
