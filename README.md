@@ -1,3 +1,10 @@
+---
+---
+---
+## This repo has been excluded from hacktoberfest 2025
+---
+---
+---
 ## 🌟 Portfolio Contribution Repository  
 
 <p align="center"> <b>Hurry Up!!</b></p>
@@ -174,9 +181,123 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
 </td>
 
 <td align="center">
+  <a href="https://github.com/pankajbaid567">
+    <img src="https://avatars.githubusercontent.com/u/pankajbaid567" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Pankaj Baid</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
   <a href="https://github.com/ahammadabdullah">
     <img src="https://avatars.githubusercontent.com/u/77303694?v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Ahammad Abdullah</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/nidaa41">
+    <img src="https://avatars.githubusercontent.com/u/218117799?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Nida Sohail</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+</tr>
+<tr>
+<td align="center">
+  <a href="https://github.com/RKartikeyan">
+    <img src="https://avatars.githubusercontent.com/u/105120016?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>GSSoC 2025-RKARTIKEYAN</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/sphinxcastor">
+    <img src="https://avatars.githubusercontent.com/u/145537605?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Abhiram</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/hendrahend">
+    <img src="https://avatars.githubusercontent.com/u/75461724?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Hendra Hendriana</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/ambujvashistha">
+    <img src="https://avatars.githubusercontent.com/u/187491003?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Ambuj Vashistha</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/wrexrus">
+    <img src="https://avatars.githubusercontent.com/u/124819644?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Rushabh Wagh</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/ShauryaRahlon/">
+    <img src="https://avatars.githubusercontent.com/u/175739917?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Shaurya Rahlon</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+</tr>
+<tr>
+<td align="center">
+  <a href="https://github.com/Dhanwantisatone">
+    <img src="https://avatars.githubusercontent.com/u/191073548?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Dhanwanti Satone</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/cruiz24">
+    <img src="https://avatars.githubusercontent.com/u/33179956?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Abhi</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/1508vansh">
+    <img src="https://avatars.githubusercontent.com/u/153891366?s=400&u=feb349dc576f1e508cdd4c6434cf9be1ec1b9f82&v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Vansh Soni</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/ujjwalrai01">
+    <img src="https://avatars.githubusercontent.com/u/152022994?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Ujjwal Rai</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/sodium16">
+    <img src="https://avatars.githubusercontent.com/sodium16" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Vishwas Naveen</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
+  <a href="https://github.com/AKASHDHARDUBEY">
+    <img src="https://avatars.githubusercontent.com/u/184285082?v=4" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Akash Dhar Dubey</b></sub><br/>
     <p>Contributor</p>
   </a>
 </td>
