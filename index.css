@@ -489,30 +489,39 @@ svg {
 .card {
   width: 100px;
   /* Adjust width to make the card square */
-  height: 100px;
-  /* Set height equal to width */
+  height: 120px;
+  /* increased height to fit text */
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.087);
   border-radius: 10px;
   backdrop-filter: blur(10px);
   text-align: center;
+  display: flex; /*Helps with centering*/
+  flex-direction: column; /*stack logo and text vertically*/
+  justify-content: center; /*Center items vertically*/
+  align-items: center; /*Center items horizontally*/
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-  width: 100%;
-  /* Set logo width to 100% of its container */
-  height: 100%;
+  width: 60px;
+  /* Set logo to a fixed size */
+  height: 60px;
   /* Set logo height to 100% of its container */
-  margin: 0 auto 10px;
-  display: block;
+  object-fit: contain; /* Ensures logo scales correctly */
+  margin-bottom: 10px; /* Space between logo and text */
 }
 
 h3 {
   margin: 0;
   font-size: 14px;
   color: #fff;
+  height: 2em; /* Reserve space for up to two lines of text */
+  line-height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
