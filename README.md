@@ -280,6 +280,14 @@ Thanks go to these **Wonderful People** 👨🏻‍💻
 </td>
 
 <td align="center">
+  <a href="https://github.com/sodium16">
+    <img src="https://avatars.githubusercontent.com/sodium16" width="100" style="border-radius:50%"/><br/>
+    <sub><b>Vishwas Naveen</b></sub><br/>
+    <p>Contributor</p>
+  </a>
+</td>
+
+<td align="center">
   <a href="https://github.com/AKASHDHARDUBEY">
     <img src="https://avatars.githubusercontent.com/u/184285082?v=4" width="100" style="border-radius:50%"/><br/>
     <sub><b>Akash Dhar Dubey</b></sub><br/>
