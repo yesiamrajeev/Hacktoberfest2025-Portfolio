@@ -1,3 +1,10 @@
+---
+---
+---
+## This repo has been excluded from hacktoberfest 2025
+---
+---
+---
 ## 🌟 Portfolio Contribution Repository  
 
 <p align="center"> <b>Hurry Up!!</b></p>
