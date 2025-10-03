@@ -5,37 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rajeev Kumar Behera // The Code Merc</title>
 
-    <!-- Favicon - Every cool site needs one -->
     <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/unnamed%20(4)-photoaidcom-cropped%20(1).png?alt=media&token=f99212d1-dc96-49fc-892a-70d286447547" type="image/png">
 
-    <!-- Stylesheets: Mine and some icon thingy -->
     <link rel="stylesheet" href="index1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Fonts: Because default fonts are boring -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- This loading screen is probably faster than my healing factor -->
     <div class="loading-screen" id="loading-screen">
       <p>Loading... Or whatever...</p>
     </div>
 
     <header class="main-header">
-        <nav class="main-nav container">
-            <a href="#home">About<span class="semicolon">;</span></a>
-            <a href="#projects">Projects<span class="semicolon">;</span></a>
-            <a href="#achievements">Bragging Rights<span class="semicolon">;</span></a>
-            <a href="#tictac">Game Time<span class="semicolon">;</span></a>
-            <a href="#contact">Hit Me Up<span class="semicolon">;</span></a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+        </button>
+        <nav class="main-nav container nav-links"> 
+            <a href="#home">About<span class="semicolon"></span></a>
+            <a href="#projects">Projects<span class="semicolon"></span></a>
+            <a href="#achievements">Bragging Rights<span class="semicolon"></span></a>
+            <a href="#tictac">Game Time<span class="semicolon"></span></a>
+            <a href="#contact">Hit Me Up<span class="semicolon"></span></a>
         </nav>
     </header>
 
     <main>
-        <!-- SECTION 1: HERO / ABOUT -->
         <section id="home" class="hero-section container">
             <div class="hero-content">
                 <div class="text-content">
@@ -52,16 +50,15 @@
                         <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/profile.png?alt=media&token=c0d8808f-3fbb-4010-80e8-2570579a48df" alt="A handsome picture of Rajeev">
                     </div>
                     <div class="image-text">
-                        <h3>Rajeev Kumar Behera<span class="semicolon">;</span></h3>
+                        <h3>Rajeev Kumar Behera<span class="semicolon"></span></h3>
                         <p>Software Mercenary</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2: PROJECTS -->
         <section id="projects" class="container">
-            <h2 class="section-heading">My Awesome Crap<span class="semicolon">;</span></h2>
+            <h2 class="section-heading">My Awesome Crap<span class="semicolon"></span></h2>
             <div class="project-grid">
                 <a href="https://github.com/yesiamrajeev/sentenix-proto-1" target="_blank" class="project-card">
                     <img src="./imgproject/sentinexpro.png" alt="Sentinex Project Thumbnail">
@@ -82,11 +79,9 @@
             </div>
         </section>
 
-        <!-- SECTION 3: ACHIEVEMENTS -->
         <section id="achievements" class="container">
             <h2 class="section-heading">Times I Was a Big Deal<span class="semicolon">;</span></h2>
             <div class="achievements-list">
-                <!-- Achievement 1 -->
                 <div class="achievement-card">
                     <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/symposium1.png?alt=media&token=e22aaa8c-aa1b-42a3-9d29-a7963ab20de9" alt="Symposium 2023 Winner">
                     <div class="text">
@@ -94,7 +89,6 @@
                         <p>Our project, Yatra 360, crushed the competition at ITER. We used fancy stuff like CBIR and QBE for indoor navigation. The judges loved it. We got a shiny trophy (not really, but we won).</p>
                     </div>
                 </div>
-                <!-- Achievement 2 -->
                 <div class="achievement-card">
                     <div class="text">
                         <h3>D³ Fest Hackathon Winner<span class="semicolon">;</span></h3>
@@ -102,7 +96,6 @@
                     </div>
                     <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/D3fest.jpeg?alt=media&token=7271560b-0049-4a11-b737-2b22ee084fd9" alt="D3 Fest Hackathon">
                 </div>
-                <!-- Achievement 3 -->
                 <div class="achievement-card">
                     <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/DSC_1434.png?alt=media&token=caf720e5-1577-4a9c-a633-b26d6a8d9369" alt="iFlashers with Omkar Rai">
                     <div class="text">
@@ -113,11 +106,9 @@
             </div>
         </section>
 
-        <!-- SECTION 4: SKILLS -->
         <section id="skills" class="container">
             <h2 class="section-heading">My Arsenal<span class="semicolon">;</span></h2>
             <div class="skills-grid">
-                <!-- I've simplified this for brevity, you can add all your skills back in here -->
                 <div class="skill-card"><img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Python Logo"><span>Python</span></div>
                 <div class="skill-card"><img src="https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/skills%2FAndroid_robot_(2014-2019).svg.png?alt=media&token=35d20daf-0310-45c8-8405-2a424b10c387" alt="Android Logo"><span>Android</span></div>
                 <div class="skill-card"><img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React Logo"><span>React</span></div>
@@ -129,7 +120,6 @@
             </div>
         </section>
 
-        <!-- SECTION 5: GAME -->
         <section id="tictac" class="container">
             <div class="tictac-content">
                 <h2 class="section-heading">Beat Me At This. I Dare You<span class="semicolon">;</span></h2>
@@ -139,7 +129,6 @@
             </div>
         </section>
 
-        <!-- SECTION 6: CONTACT -->
         <footer id="contact">
             <div class="container">
                 <h2 class="section-heading">Let's Talk Business<span class="semicolon">;</span></h2>
@@ -171,15 +160,27 @@
         </footer>
     </main>
 
-    <!-- Scripts go at the end. It's just good manners. -->
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script src="./index.js"></script> <!-- Your Tic-Tac-Toe JS -->
-    <script>
+    <script src="./index.js"></script> <script>
         // --- Loading Screen ---
         window.addEventListener("load", function () {
             const loadingScreen = document.getElementById("loading-screen");
             loadingScreen.classList.add("hidden");
+        });
+
+        // --- Hamburger Menu Toggle (NEW JAVASCRIPT) ---
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.main-nav');
+            nav.classList.toggle('active');
+        });
+
+        // --- Close Menu on Link Click (Good UX) ---
+        document.querySelectorAll('.main-nav a').forEach(item => {
+            item.addEventListener('click', () => {
+                const nav = document.querySelector('.main-nav');
+                nav.classList.remove('active');
+            });
         });
 
         // --- Firebase ---
