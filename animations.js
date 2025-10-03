@@ -127,34 +127,22 @@ function addScrollIndicator() {
 function enhanceScrollToTopButton() {
   const scrollBtn = document.getElementById('scrollToTop');
   if (!scrollBtn) return;
-  
+
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
+    if (window.scrollY > 300) {
       scrollBtn.classList.add('show');
     } else {
-      scrollBtn.classList.add('hide');
-      setTimeout(() => {
-        if (window.pageYOffset <= 300) {
-          scrollBtn.classList.remove('show');
-          scrollBtn.classList.remove('hide');
-        }
-      }, 300);
+      scrollBtn.classList.remove('show');
     }
   });
-  
   scrollBtn.addEventListener('click', (e) => {
     e.preventDefault();
     
-    // Animated scroll to top with easing
-    const scrollToTop = () => {
-      const c = document.documentElement.scrollTop || document.body.scrollTop;
-      if (c > 0) {
-        window.requestAnimationFrame(scrollToTop);
-        window.scrollTo(0, c - c / 10);
-      }
-    };
-    
-    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
+    scrollBtn.classList.remove('show');
   });
 }
 
