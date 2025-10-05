@@ -6,6 +6,13 @@ let computerSymbol = "O";
 let gameActive = false;
 let playerName = ""; 
 
+// Game statistics tracking
+let gameStats = {
+  wins: 0,
+  losses: 0,
+  draws: 0
+};
+
 // Enhanced Custom Alert Modal Functions with improved animations and error handling
 function showCustomAlert(message, isWin = false) {
   try {
@@ -88,6 +95,10 @@ function startGame() {
   document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
 
   cells.forEach((cell) => (cell.textContent = ""));
+  
+  // Load and display game statistics when starting a game
+  loadGameStats();
+  displayGameStats();
 }
 
 for (let i = 0; i < 9; i++) {
@@ -101,9 +112,11 @@ for (let i = 0; i < 9; i++) {
       cell.textContent = playerSymbol;
       if (checkWinner(playerSymbol)) {
         showCustomAlert("You Win!");
+        updateGameStats('win');
         setTimeout(resetBoard, 2000);
       } else if (cells.every((cell) => cell.textContent !== "")) {
         showCustomAlert("It's a draw!");
+        updateGameStats('draw');
         setTimeout(resetBoard, 2000);
       } else {
         currentPlayer = "Raj's";
@@ -141,9 +154,11 @@ function computerMove() {
 
     if (checkWinner(computerSymbol)) {
       showCustomAlert("Raj Won!");
+      updateGameStats('loss');
       setTimeout(resetBoard, 2000);
     } else if (cells.every((cell) => cell.textContent !== "")) {
       showCustomAlert("It's a draw!");
+      updateGameStats('draw');
       setTimeout(resetBoard, 2000);
     }
   }
@@ -157,6 +172,93 @@ function resetBoard() {
   currentPlayer = "Your";
   document.getElementById("turn-info").textContent = `${currentPlayer} turn (you are "${playerSymbol}")`;
   closeCustomAlert();
+}
+
+// Function to update the game statistics
+function updateGameStats(result) {
+  // Load existing stats from localStorage
+  loadGameStats();
+  
+  // Update stats based on game result
+  if (result === 'win') {
+    gameStats.wins++;
+  } else if (result === 'loss') {
+    gameStats.losses++;
+  } else if (result === 'draw') {
+    gameStats.draws++;
+  }
+  
+  // Save updated stats to localStorage
+  saveGameStats();
+  
+  // Update the UI to display new stats
+  displayGameStats();
+}
+
+// Save game statistics to localStorage
+function saveGameStats() {
+  try {
+    localStorage.setItem('tictactoeStats', JSON.stringify(gameStats));
+  } catch (error) {
+    console.error('Error saving game statistics:', error);
+  }
+}
+
+// Load game statistics from localStorage
+function loadGameStats() {
+  try {
+    const savedStats = localStorage.getItem('tictactoeStats');
+    if (savedStats) {
+      gameStats = JSON.parse(savedStats);
+    }
+  } catch (error) {
+    console.error('Error loading game statistics:', error);
+    // Reset stats if there's an error
+    gameStats = { wins: 0, losses: 0, draws: 0 };
+  }
+}
+
+// Display game statistics in the UI
+function displayGameStats() {
+  const winsElement = document.getElementById('wins-count');
+  const lossesElement = document.getElementById('losses-count');
+  const drawsElement = document.getElementById('draws-count');
+  
+  if (winsElement && lossesElement && drawsElement) {
+    winsElement.textContent = gameStats.wins;
+    lossesElement.textContent = gameStats.losses;
+    drawsElement.textContent = gameStats.draws;
+    
+    // Add animation to updated stat
+    animateStatUpdate(winsElement);
+    animateStatUpdate(lossesElement);
+    animateStatUpdate(drawsElement);
+  }
+}
+
+// Add animation to the updated stat
+function animateStatUpdate(element) {
+  element.classList.add('stat-updated');
+  setTimeout(() => {
+    element.classList.remove('stat-updated');
+  }, 1000);
+}
+
+// Reset game statistics
+function resetGameStats() {
+  // Reset stats to zero
+  gameStats = {
+    wins: 0,
+    losses: 0,
+    draws: 0
+  };
+  
+  // Save to localStorage and update UI
+  saveGameStats();
+  displayGameStats();
+  
+  // Show feedback to user
+  showCustomAlert("Game statistics have been reset!", false);
 }
 
 function minimax(board, depth, isMaximizing) {
@@ -242,6 +344,10 @@ function checkWin(board) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Load game statistics on page load
+    loadGameStats();
+    displayGameStats();
+    
     var homeSection = document.getElementById("home");
 
     if (!homeSection) {
